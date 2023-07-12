@@ -108,9 +108,9 @@
                     <div class="input-row" id="" style="display: none">
                         <h6 style="color: red;">*Por favor, asegúrese de llenar todos los campos.</h6>
                     </div>
-                    <button type="submit" class="btn-black">Omitir por ahora</button>
-
-                    <button type="" class="btn" id="" onclick="validarFormulario()">Continuar</button>
+                    <button type="submit" class="buton-black">Omitir por ahora</button>
+                    <br><br>
+                    <button type="" class="buton" id="" onclick="validarFormulario()">Continuar</button>
 
                     </form>
                 </div>
