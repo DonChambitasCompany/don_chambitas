@@ -26,16 +26,16 @@
     </header>
     <!--Cuerpo del perfil-->
     <main>
-    <section class="menu">
-        <div class="settings" align="center"><!--Menu Settings-->
-            <button type="button" id="ayuda"><a href="#"><ion-icon name="help-circle-outline" title="Información"></ion-icon></a></button>
-            <button type="button" id="config"><a href="#"><ion-icon name="settings-outline" title="Ajustes"></ion-icon></a></button>
-            <button type="button" id="historial"><a href="#"><ion-icon name="clipboard-outline" title="Historial"></ion-icon></a></button>
-        </div>
+    <section class="menu" align="center">
+    <!--Menu Settings-->
+            <button type="button" id="ayuda" onclick="showContent('info')"><a href="#"><ion-icon name="help-circle-outline" title="Información"></ion-icon></a></button>
+            <button type="button" id="historial" onclick="showContent('history')"><a href="#"><ion-icon name="construct-outline"></ion-icon></ion-icon></a></button>
+            <button type="button" id="config" onclick="showContent('configuration')"><a href="#"><ion-icon name="settings-outline" title="Ajustes"></ion-icon></a></button>
+    
     </section>
     <!--MOSTRAR CONTENIDO PERFIl-->
-    <section class="contenido_perfil">
-        <div class="profile__cont" id="info" align="center">
+    <section id="info"  >
+        <div class="profile__cont" align="center">
             <div class="row">
                     <div class="col" >
                         <h2><strong>DON CHAMBITAS</strong></h2><br>
@@ -53,25 +53,34 @@
             </div>
             
         </div>
-        
-    <div class="profile__cont" align="center" style="display: none;">
-        <div class="row">
-                <div class="col" id="fecha">
-                    <h2>Fecha</h2>
-                </div>
-                <div class="col" id="trabajos">
-                    <h2>Trabajo pedido</h2>
-                </div>
-                <div class="col" id="lugar">
-                    <h2>Dirección</h2>
-                </div>
+    </section>
+    <section id="history"  style="display: none;">
+        <div class="profile__cont" align="center" >
+            <div class="row" >
+                    <div class="col" id="fecha">
+                        <h2>Fecha</h2>
+                    </div>
+                    <div class="col" id="trabajos">
+                        <h2>Trabajo pedido</h2>
+                    </div>
+                    <div class="col" id="lugar">
+                        <h2>Dirección</h2>
+                    </div>
+            </div>
+            
         </div>
-        
-    </div>
+    </section>
+    <section id="configuration" style="display: none;" >
+        <div class="profile__cont" align="center">
+            <h1>asdasd</h1>
+            <h1>asdasd</h1>
+            <h1>asdasdads</h1>
+            <h1>asdsaddas</h1>
+            <h1>saddasd</h1>
+            <h1>asdasd</h1>
+        </div>
     </section>
 </main>
-
-
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
