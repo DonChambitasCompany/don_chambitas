@@ -50,3 +50,20 @@ box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     font-size: 70px;
   }
 
+.profile__cont{
+    position: absolute;
+    margin: 300px;
+    width: 70%;
+    top: auto;
+    background: #ffffff;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#historial, #config, #ayuda{
+    background-color: transparent;
+    border: none;
+}
