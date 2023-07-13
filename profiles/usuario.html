@@ -12,12 +12,12 @@
     <!--Header del perfil de usuario-->
     <header>
         <div class="home">
-            <a href="../don_chambitas-main/index.html"><ion-icon name="home-outline"></ion-icon></a>
+            <a href="../index.html"><ion-icon name="home-outline"></ion-icon></a>
         </div>
         
         
         <div class="name" align="center">
-            <h1>Tú perfil</h1>
+            <h1>Tu perfil</h1>
             <p>David</p>
         </div>
         <div class="imagenes">
@@ -28,12 +28,47 @@
     <main>
     <section class="menu">
         <div class="settings" align="center"><!--Menu Settings-->
-            <a href="#"><ion-icon name="help-circle-outline"></ion-icon></a>
-            <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
-            <a href="#"><ion-icon name="clipboard-outline"></ion-icon></a>
+            <button type="button" id="ayuda"><a href="#"><ion-icon name="help-circle-outline" title="Información"></ion-icon></a></button>
+            <button type="button" id="config"><a href="#"><ion-icon name="settings-outline" title="Ajustes"></ion-icon></a></button>
+            <button type="button" id="historial"><a href="#"><ion-icon name="clipboard-outline" title="Historial"></ion-icon></a></button>
         </div>
     </section>
-    
+    <!--MOSTRAR CONTENIDO PERFIl-->
+    <section class="contenido_perfil">
+        <div class="profile__cont" id="info" align="center">
+            <div class="row">
+                    <div class="col" >
+                        <h2><strong>DON CHAMBITAS</strong></h2><br>
+                        <h3>Acerca de nosotros: </h3>
+                        <p>asdasdasdas<br>asdasdasadsdas<br>asdasdasdaads<br>asdasdasdasdasdasdas</p>
+                        <hr>
+                    </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <h2><strong>AYUDA</strong></h2><br>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    <div class="profile__cont" align="center" style="display: none;">
+        <div class="row">
+                <div class="col" id="fecha">
+                    <h2>Fecha</h2>
+                </div>
+                <div class="col" id="trabajos">
+                    <h2>Trabajo pedido</h2>
+                </div>
+                <div class="col" id="lugar">
+                    <h2>Dirección</h2>
+                </div>
+        </div>
+        
+    </div>
+    </section>
 </main>
 
 
