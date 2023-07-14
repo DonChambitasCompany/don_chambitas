@@ -26,28 +26,29 @@
     </header>
     <!--Cuerpo del perfil-->
     <main>
-    <section class="menu" align="center">
+    <div class="menu" align="center">
     <!--Menu Settings-->
-            <button type="button" id="ayuda" onclick="showContent('info')"><a href="#"><ion-icon name="help-circle-outline" title="Información"></ion-icon></a></button>
-            <button type="button" id="historial" onclick="showContent('history')"><a href="#"><ion-icon name="construct-outline"></ion-icon></ion-icon></a></button>
-            <button type="button" id="config" onclick="showContent('configuration')"><a href="#"><ion-icon name="settings-outline" title="Ajustes"></ion-icon></a></button>
+            <button type="button" id="ayuda" ><a href="#"><ion-icon name="help-circle-outline" title="Información"></ion-icon></a></button>
+            <button type="button" id="historial" ><a href="#"><ion-icon name="construct-outline"></ion-icon></ion-icon></a></button>
+            <button type="button" id="config" ><a href="#"><ion-icon name="settings-outline" title="Ajustes"></ion-icon></a></button>
     
-    </section>
+    </div>
     <!--MOSTRAR CONTENIDO PERFIl-->
-    <section id="info"  >
+    <section id="info"  style="display: block;">
         <div class="profile__cont" align="center">
             <div class="row">
                     <div class="col" >
-                        <h2><strong>DON CHAMBITAS</strong></h2><br>
-                        <h3>Acerca de nosotros: </h3>
-                        <p>asdasdasdas<br>asdasdasadsdas<br>asdasdasdaads<br>asdasdasdasdasdasdas</p>
+                        <h2><strong>AYUDA:</strong></h2><br>
+                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi voluptatum nam, alias cupiditate corporis voluptatibus magnam, placeat excepturi ea neque numquam magni velit fuga quisquam ipsum maxime dolore quasi culpa!</p>
                         <hr>
                     </div>
             </div>
             <div>
                 <div class="row">
                     <div class="col">
-                        <h2><strong>AYUDA</strong></h2><br>
+                        <h2><strong>DON CHAMBITAS</strong></h2><br>
+                        <h3>Acerca de nosotros: </h3>
+                        <p>asdasdasdas<br>asdasdasadsdas<br>asdasdasdaads<br>asdasdasdasdasdasdas</p>
                     </div>
                 </div>
             </div>
@@ -82,6 +83,7 @@
     </section>
 </main>
 </body>
+<script src="elementosPerfil.js" type="text/Javascript"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
