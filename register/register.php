@@ -115,29 +115,8 @@
                     </form>
                 </div>
 
-                <!-- Formulario si ya cuenta con una cuenta -->
-                <div id="formularioInicioSesion" style="display: none">
-                    <div class="input-row">
-                        <div class="email">
-                            <input type="email" id="email" placeholder="Correo Electrónico">
-                        </div>
-                        <div class="password">
-                            <input type="password" id="password" placeholder="Contraseña" minlength="8">
-                        </div>
-                    </div>
-
-                    <div class="input-row">
-                    </div>
-                    <br>
-                    <div class="input-row" id="" style="display: none">
-                        <h6 style="color: red;">*Por favor, asegúrese de llenar todos los campos.</h6>
-                    </div>
-
-                    <button type="" class="btn" id="" onclick="validarFormularioInicioSesion()">Continuar</button>
-                    <button type="" class="btn btn-black" id="" onclick="validarFormularioInicioSesion()">Volver</button>
-
-                    </form>
-                </div>
+                
+               </div>
             </div>
         </div>
             </div>
