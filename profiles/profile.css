@@ -6,6 +6,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.terminos{
+    padding: 15px;
+    color: blue;
+}
+
 a{
     color: black;
 }
@@ -62,6 +67,8 @@ header {
         align-items: center;
     }
     
+
+
     #historial, #config, #ayuda{
         background-color: transparent;
         border: none;
