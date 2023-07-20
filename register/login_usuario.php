@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="wrapper">
                             <h1>INICIAR SESIÓN</h1>             
-                        <form>
+                        <form action="../profiles/usuario.html">
                             <div class="input-row">
                                 <div class="input-box">
                                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
