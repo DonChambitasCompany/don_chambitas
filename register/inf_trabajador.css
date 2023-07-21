@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.solicitud {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos del primer div */
+#div1 {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#cuadro_foto {
+    float: right;
+}
+
+#photo {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+input[type="text"] {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+/* Estilos del segundo div */
+.div2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.div2_column {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.div2_column1,
+.div2_column2,
+.div2_column3,
+.div2_column4 {
+    width: 25%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#datos_per {
+    padding: 20px 20px 0 20px;
+}
