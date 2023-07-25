@@ -62,7 +62,7 @@
                         <input type="button" class="buton" id="btnContinuar" onclick="validarFormulario()" value="Continuar">
                         <br>
                         <br>
-                        <a href="login_usuario.php"><input class="buton buton-black" id="btnMostrarForm" value="Ya tengo una cuenta"></a>
+                        <a href="login.php"><input class="buton buton-black" id="btnMostrarForm" value="Ya tengo una cuenta"></a>
                 </div>
                 <!-- TERMINA EL FORMULARIO PRINCIPAL -->
 
