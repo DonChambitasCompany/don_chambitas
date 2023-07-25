@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -64,7 +64,7 @@
         <div class="row">
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
@@ -73,14 +73,14 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1">
+                    <img src="../assets/Mecanicoperfil.jpg" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="card-body">
                         <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
                         <p class="card-text">a 2.67km de distancia</p>
                     </div>
                 </div>
             </div>
-            
+            <?php include 'modal.php'; ?>    
     </div>
 </body>
 </html>
