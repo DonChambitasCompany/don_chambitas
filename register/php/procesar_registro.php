@@ -31,54 +31,76 @@ $estado_o_provincia = $_POST["estado_o_provincia"];
 //tabla codigo postal
 $numero_codigo_postal = $_POST["numero_codigo_postal"];
 
-// Creamos un array para almacenar los nombres de las tablas y los valores de los parámetros
-$tables = array(
-    "usuarios" => array(
-        "nombre" => $nombre_usuario,
-        "apellido_paterno" => $apellido_paterno,
-        "apellido_materno" => $apellido_materno,
-        "edad" => $edad
-    ),
-    "cuentas" => array(
-        "correo_electronico" => $correo_electronico,
-        "my_password" => $my_password
-    ),
-    "contacto" => array(
-        "telefono" => $telefono
-    ),
-    "countries" => array(
-        "name_country" => $name_country
-    ),
-    "addresses" => array(
-        "calle" => $calle,
-        "numero_exterior" => $numero_exterior,
-        "numero_interior" => $numero_interior
-    ),
-    "estado_o_provincia" => array(
-        "name_estado_o_provincia" => $estado_o_provincia
-    ),
-    "codigo_postal" => array(
-        "codigo_postal" => $numero_codigo_postal
-    )
-);
 
-// Recorremos el array e insertamos los datos en las tablas correspondientes
-foreach ($tables as $table => $values) {
-    $sql = "INSERT INTO $table (";
-    $values_string = "";
-    foreach ($values as $key => $value) {
-        $sql .= $key . ", ";
-        $values_string .= "'" . $value . "', ";
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Iniciar una transacción para asegurar la consistencia
+$conexion->begin_transaction();
+
+    try {
+
+        // Insertar los datos en la tabla "cuentas"
+        $insertar_cuenta = "INSERT INTO cuentas (correo_electronico, my_password) VALUES ('$correo_electronico', '$my_password')";
+        $conexion->query($insertar_cuenta);
+
+        // Obtener el id_cuenta recién generado
+        $id_cuenta = $conexion->insert_id;
+
+        //Insertar los datos en la tabla "countries"
+        $insertar_country = "INSERT INTO countries (name_country) 
+                            VALUES ('$name_country')";
+        $conexion->query($insertar_country);
+
+        // Obtener el id_country recién generado
+        $id_country = $conexion->insert_id;
+
+        //Insertar los datos en la tabla "addresses"
+        $insertar_address = "INSERT INTO addresses (calle, numero_interior, numero_exterior, country_id) 
+                                VALUES ('$calle', '$numero_interior', '$numero_exterior', $id_country)";
+        $conexion->query($insertar_address);
+
+        // Obtener el id_address recién generado
+        $id_address = $conexion->insert_id;
+
+        // Insertar los datos en la tabla "usuarios"
+        $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, cuenta_id, address_id) 
+                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, $id_cuenta, $id_address)";
+        $conexion->query($insertar_usuario);
+
+        // Obtener el id_usuario recién generado
+        $id_usuario = $conexion->insert_id;
+
+        //insertar los datos en la tabla "contactos"
+        $insertar_contactos = "INSERT INTO contactos (telefono, usuario_id) 
+                            VALUES ('$telefono', $id_usuario)";
+        $conexion->query($insertar_contactos);
+
+        // Insertar los datos en la tabla "estado_o_provincia"
+        $insertar_estado_o_provincia = "INSERT INTO estado_o_provincia (name_estado_o_provincia, country_id) 
+                            VALUES ('$estado_o_provincia', $id_country)";
+        $conexion->query($insertar_estado_o_provincia);
+
+        // Obtener el id_estado_o_provincia recién generado
+        $id_estado_o_provincia = $conexion->insert_id;
+
+        // Insertar los datos en la tabla "codigo_postal"
+        $insertar_numero_codigo_postal = "INSERT INTO codigo_postal (numero_codigo_postal, estado_o_provincia_id)
+                             VALUES ($numero_codigo_postal, $id_estado_o_provincia)";
+        $conexion->query($insertar_numero_codigo_postal);
+
+
+
+        // Si todo se insertó correctamente, confirmamos la transacción
+        $conexion->commit();
+        echo "Datos insertados correctamente.";
+    } catch (Exception $e) {
+        // Si hay algún error en las inserciones, revertimos la transacción
+        $conexion->rollback();
+        echo "Error al insertar los datos: " . $e->getMessage();
     }
-    $sql = substr($sql, 0, -2);
-    $sql .= ") VALUES (";
-    $values_string = substr($values_string, 0, -2);
-    $sql .= $values_string . ")";
-    $conn->query($sql);
-}
-
-// Cerramos la conexión
-
 
 ?>
 
