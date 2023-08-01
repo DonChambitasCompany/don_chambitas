@@ -26,7 +26,7 @@
                         $perfil = '';
                         $boton = '<a href="../register/login.php">Iniciar Sesión</a>';
                     }?>
-                <li><?php echo $perfil; ?></li>
+                <li><?php echo $perfil; ?> </li>
                 </ul>
                 <li>
                 <button class="btn" id="boton"><?php echo $boton; ?></button>
