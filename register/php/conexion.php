@@ -1,15 +1,16 @@
+
 <?php
-// Datos de conexión a la base de datos
-$server = "localhost"; // Dirección del servidor de base de datos MySQL
-$usuario = "root"; // Nombre de usuario de la base de datos
-$contrasena = ""; // Contraseña del usuario de la base de datos
-$basededatos = "donchambas"; // Nombre de la base de datos
+// Database configuration
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "don_chambitas";
 
-// Crear la conexión
-$conexion = new mysqli($server, $usuario, $contrasena, $basededatos);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar si hay errores en la conexión
-if ($conexion->connect_errno) {
-    die("Error al conectar con la base de datos: " . $conexion->connect_error);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
