@@ -62,7 +62,7 @@
         <div class="offcanvas-footer">
             <div class="container text-center space-between">
                 <div class="offcanvas-title">
-                    <button class="btn mb-3" data-bs-dismiss="offcanvas">Cerrar sesión</button>
+                    <button class="btn mb-3" data-bs-dismiss="offcanvas"><a href="../index.php">Cerrar sesión</a></button>
                 </div>
             </div>
         </div>
