@@ -19,13 +19,14 @@ if (!isset($_SESSION['usuario'])){//comprobar si ya está la sesión
     <!--Header del perfil de usuario-->
     <header>
         <div class="home">
-            <a href="../index.html"><ion-icon name="home-outline"></ion-icon></a>
+            <a href="../index.php"><ion-icon name="home-outline"></ion-icon></a>
         </div>
-        
-        
         <div class="name" align="center">
             <h1>Tu perfil</h1>
-            <p>David</p>
+            <p>
+                <?php include '../nombres.php' ?>
+            </p>
+            
         </div>
         <div class="imagenes">
             <img src="https://e1.pxfuel.com/desktop-wallpaper/596/602/desktop-wallpaper-red-velvet-feel-my-rhythm-mv-teaser-red-velvet-feel-my-rhythm.jpg" alt="foto_perfil" title="foto_perfil" class="rounded-circle" >
