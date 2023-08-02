@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión
-include "php/conexion.php";
+include "process_register_php/conexion.php";
 
 // Realizar la primera consulta para obtener las opciones de tipo_residencia
 $sql_tipo_residencia = "SELECT id_tipo_residencia, nombre_tipo_residencia FROM tipo_residencia";

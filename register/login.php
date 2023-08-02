@@ -42,7 +42,7 @@ session_start();
                             
                             <a href="../index.php"><button type="button" class="buton buton-black">Volver</button></a>
                             <br><br>
-                            <a href="register.html"><button type="button" class="buton buton-registro">¿Aún no tienes una cuenta?
+                            <a href="register_cliente.html"><button type="button" class="buton buton-registro">¿Aún no tienes una cuenta?
                                 <br><strong>Registrate</strong></button></a>
                             
                             <?php if (!empty($errores)):?>
