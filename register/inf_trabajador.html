@@ -59,16 +59,6 @@
                 <h3><i class="fas fa-user"></i> Datos personales</h3>
             </div>
             <div class="card-body">
-                <div class="form-group row">
-                    <label for="PersonType" class="col-sm-3 col-form-label">Tipo de Persona *</label>
-                    <div class="col-sm-9">
-                        <select class="form-control" data-val="true" data-val-required="Tipo de persona es obligatorio" id="PersonType" name="PersonType">
-                            <option value="">-- SELECCIONE --</option>
-                            <option value="1">FISICA</option>
-                            <option value="2">MORAL</option>
-                        </select>
-                    </div>
-                </div>
 
                 <div class="form-group row">
                     <label for="Name" class="col-sm-3 col-form-label">Nombre(s) *</label>
@@ -91,24 +81,20 @@
                 <div id="cfdiData" class="mt-4">
                     <div class="card">
                         <div class="card-header bg-primary text-white">
-                            <h4>Asegúrese que estos datos coincidan con los proporcionados en el registro</h4>
+                            <h4>Asegúrese que estos datos sean de la zona donde se encuentra</h4>
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="regimenFiscal" class="col-sm-3 col-form-label">Ciudad *</label>
+                                <label for="regimenFiscal" class="col-sm-3 col-form-label">País *</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="regimenFiscal" name="regimenFiscal">
-                                        <option selected="selected" value="">-- SELECCIONE --</option>
-                                    </select>
+                                    <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="usoCFDI" class="col-sm-3 col-form-label">Codigo postal *</label>
+                                <label for="usoCFDI" class="col-sm-3 col-form-label">Cuidad *</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="usoCFDI" name="usoCFDI">
-                                        <option selected="selected" value="">-- SELECCIONE --</option>
-                                    </select>
+                                    <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
                                 </div>
                             </div>
 
@@ -118,6 +104,14 @@
                                     <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="codigoCFDI" class="col-sm-3 col-form-label">Contraseña *</label>
+                                <div class="col-sm-9">
+                                    <input autocomplete="off" class="form-control" id="my_password" name="my_password" type="text" value="" />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
