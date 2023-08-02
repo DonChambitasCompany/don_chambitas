@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (!isset($_SESSION['usuario'])){//comprobar si ya está la sesión
+    header('Location: ../register/login.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
