@@ -1,3 +1,14 @@
+<?php
+
+//Incluir el archivo de conexión
+include "conexion.php";
+
+//Realizar la consulta para obtener las opciones
+$sql = "SELECT id_tipo_residencia, nombre_tipo_residencia FROM tipo_residencia";
+$result = $conexion->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,20 +72,20 @@
             <div class="card-body">
 
                 <div class="form-group row">
-                    <label for="Name" class="col-sm-3 col-form-label">Nombre(s) *</label>
+                    <label for="nombre_usuario" class="col-sm-3 col-form-label">Nombre(s) *</label>
                     <div class="col-sm-9">
-                        <input autocomplete="off" class="form-control" data-val="true" data-val-required="El nombre es obligatorio." id="Name" maxlength="120" name="Name" type="text" value="" />
+                        <input autocomplete="off" class="form-control" type="text" data-val-required="El nombre es obligatorio." id="nombre_usuario" name="nombre_usuario"/>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="LastName" class="col-sm-3 col-form-label">Primer Apellido *</label>
+                    <label for="apellido_paterno" class="col-sm-3 col-form-label">Primer Apellido *</label>
                     <div class="col-sm-3">
-                        <input autocomplete="off" class="form-control" id="LastName" maxlength="50" name="LastName" type="text" value="" />
+                        <input autocomplete="off" class="form-control" id="primer_apellido" name="primer_apellido" type="text"/>
                     </div>
-                    <label for="SecondLastName" class="col-sm-3 col-form-label">Segundo Apellido *</label>
+                    <label for="apellido_materno" class="col-sm-3 col-form-label">Segundo Apellido *</label>
                     <div class="col-sm-3">
-                        <input autocomplete="off" class="form-control" id="SecondLastName" maxlength="50" name="SecondLastName" type="text" value="" />
+                        <input autocomplete="off" class="form-control" id="apellido_materno" name="apellido_materno" type="text" />
                     </div>
                 </div>
 
@@ -85,28 +96,28 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="regimenFiscal" class="col-sm-3 col-form-label">País *</label>
+                                <label for="name_country" class="col-sm-3 col-form-label">País *</label>
                                 <div class="col-sm-9">
-                                    <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
+                                    <input autocomplete="off" class="form-control" id="name_country" name="name_country" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="usoCFDI" class="col-sm-3 col-form-label">Cuidad *</label>
+                                <label for="name_estado_o_provincia" class="col-sm-3 col-form-label">Cuidad *</label>
                                 <div class="col-sm-9">
-                                    <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
+                                    <input autocomplete="off" class="form-control" id="name_estado_o_provincia" name="name_estado_o_provincia" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="codigoCFDI" class="col-sm-3 col-form-label">Correo Electronico *</label>
+                                <label for="correo_electronico" class="col-sm-3 col-form-label">Correo Electronico *</label>
                                 <div class="col-sm-9">
-                                    <input autocomplete="off" class="form-control" id="codigoCFDI" name="codigoCFDI" type="text" value="" />
+                                    <input autocomplete="off" class="form-control" id="correo_electronico" name="correo_electronico" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="codigoCFDI" class="col-sm-3 col-form-label">Contraseña *</label>
+                                <label for="my_password" class="col-sm-3 col-form-label">Contraseña *</label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" class="form-control" id="my_password" name="my_password" type="text" value="" />
                                 </div>
@@ -134,36 +145,47 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="numero_curp">Número de CURP *</label>
-                        <input type="text" class="form-control" placeholder="Escribe tu CURP">
+                        <input type="text" class="form-control" id="numero_curp" name="numero_curp" placeholder="Escribe tu CURP">
                     </div>
         
                     <div class="col-md-4">
                         <label for="numero_cartilla_militar">Número de Cartilla de Servicio Militar *</label>
-                        <input type="text" class="form-control" placeholder="Escribe el número del servicio militar">
+                        <input type="text" class="form-control" id="numero_cartilla_militar" name="numero_cartilla_militar"  placeholder="Escribe el número del servicio militar">
                     </div>
         
                     <div class="col-md-4">
                         <label for="numero_pasaporte">Número de Pasaporte *</label>
-                        <input type="text" class="form-control" placeholder="Escribe el número de Pasaporte">
+                        <input type="text" class="form-control" id="numero_pasaporte" name="numero_pasaporte"  placeholder="Escribe el número de Pasaporte">
                     </div>
                 </div>
         
                 <br>
         
                 <div class="row">
-        
-                    <div class="col-md-5">
-                        <label for="es_extranjero">¿Es extranjero?</label>
-                        <select class="form-control" id="es_extranjero" name="es_extranjero">
-                            <option value="">-- SELECCIONE --</option>
-                            <option value="1">Soy extranjero</option>
-                            <option value="2">Soy de México</option>
-                        </select>
-                    </div>
+
+                <!-- por corregir -->
+
+                <div class="col-md-5">
+                    <label for="residencia">¿Es extranjero?</label>
+                    <select class="form-control" id="residencia" name="residencia">
+                        <option value="">-- SELECCIONE --</option>
+
+                        <?php
+                        // Recorrer los resultados de la consulta y crear las opciones del select
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<option value="' . $row["id"] . '">' . $row["nombre_opcion"] . '</option>';
+                            }
+                        }
+                        ?>
+                        
+                    </select>
+
+                </div>
         
                     <div class="col-md-7">
-                        <label for="documentacion_adjunta">Si usted es extranjero, adjunte documentación que permita trabajar en el país</label>
-                        <input type="file" class="form-control" id="documentacion_adjunta" name="documentacion_adjunta" accept=".pdf, .doc, .docx">
+                        <label for="doc_extranjero">Si usted es extranjero, adjunte documentación que permita trabajar en el país</label>
+                        <input type="file" class="form-control" id="doc_extranjero" name="doc_extranjero" accept=".pdf, .doc, .docx">
                     </div>
         
                 </div>

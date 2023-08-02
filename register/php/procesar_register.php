@@ -67,7 +67,7 @@ $conexion->begin_transaction();
         $id_address = $conexion->insert_id;
 
         // Insertar los datos en la tabla "usuarios"
-        $insertar_usuario = "INSERT INTO usuarios (nombre, apellido_paterno, apellido_materno, edad, cuenta_id, address_id) 
+        $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, cuenta_id, address_id) 
                             VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, $id_cuenta, $id_address)";
         $conexion->query($insertar_usuario);
 
@@ -75,7 +75,7 @@ $conexion->begin_transaction();
         $id_usuario = $conexion->insert_id;
 
         //insertar los datos en la tabla "contactos"
-        $insertar_contactos = "INSERT INTO contacto (telefono, usuario_id) 
+        $insertar_contactos = "INSERT INTO contactos (telefono, usuario_id) 
                             VALUES ('$telefono', $id_usuario)";
         $conexion->query($insertar_contactos);
 
@@ -88,7 +88,7 @@ $conexion->begin_transaction();
         $id_estado_o_provincia = $conexion->insert_id;
 
         // Insertar los datos en la tabla "codigo_postal"
-        $insertar_numero_codigo_postal = "INSERT INTO codigo_postal (codigo_postal, estado_o_provincia_id)
+        $insertar_numero_codigo_postal = "INSERT INTO codigo_postal (numero_codigo_postal, estado_o_provincia_id)
                              VALUES ($numero_codigo_postal, $id_estado_o_provincia)";
         $conexion->query($insertar_numero_codigo_postal);
 
