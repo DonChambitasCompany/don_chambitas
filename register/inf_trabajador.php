@@ -1,13 +1,21 @@
 <?php
+// Incluir el archivo de conexión
+include "php/conexion.php";
 
-//Incluir el archivo de conexión
-include "conexion.php";
+// Realizar la primera consulta para obtener las opciones de tipo_residencia
+$sql_tipo_residencia = "SELECT id_tipo_residencia, nombre_tipo_residencia FROM tipo_residencia";
+$result_tipo_residencia = $conexion->query($sql_tipo_residencia);
 
-//Realizar la consulta para obtener las opciones
-$sql = "SELECT id_tipo_residencia, nombre_tipo_residencia FROM tipo_residencia";
-$result = $conexion->query($sql);
+// Realizar la primera consulta para obtener las opciones de tipo_licencia
+$sql_tipo_licencia = "SELECT id_tipo_licencia, nombre_tipo_licencia FROM tipo_licencia";
+$result_tipo_licencia = $conexion->query($sql_tipo_licencia);
+
+// Realizar la primera consulta para obtener las opciones de tipo_licencia
+$sql_profesiones = "SELECT id_profesion, name_profesion FROM profesiones";
+$result_profesiones = $conexion->query($sql_profesiones);
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,13 +54,18 @@ $result = $conexion->query($sql);
                         </div>
                         <div class="form-group">
                             <label for="puesto">Puesto Solicitado</label>
-                            <select id="puesto" class="form-control">
-                                <option value="opcion1">Elige una opción</option>
-                                <option value="opcion2">Carpintero</option>
-                                <option value="opcion3">Plomero</option>
-                                <option value="opcion4">Herrero</option>
-                                <!-- Agrega aquí más opciones de puestos disponibles -->
+                            <select class="form-control" id="profesiones" name="profesiones">
+                                <option value="">-- SELECCIONE --</option>
+                                <?php
+                                // Recorrer los resultados de la consulta y crear las opciones del select
+                                if ($result_profesiones->num_rows > 0) {
+                                    while ($row = $result_profesiones->fetch_assoc()) {
+                                        echo '<option value="' . $row["id_profesion"] . '">' . $row["name_profesion"] . '</option>';
+                                    }
+                                }
+                                ?>
                             </select>
+
                         </div>
                         <div class="form-group">
                             <label for="sueldo">Sueldo deseado</label>
@@ -163,24 +176,21 @@ $result = $conexion->query($sql);
         
                 <div class="row">
 
-                <!-- por corregir -->
+                <!-- Se despliegan las opciones segun la bd -->
 
                 <div class="col-md-5">
                     <label for="residencia">¿Es extranjero?</label>
                     <select class="form-control" id="residencia" name="residencia">
                         <option value="">-- SELECCIONE --</option>
-
                         <?php
                         // Recorrer los resultados de la consulta y crear las opciones del select
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo '<option value="' . $row["id"] . '">' . $row["nombre_opcion"] . '</option>';
+                        if ($result_tipo_residencia->num_rows > 0) {
+                            while ($row = $result_tipo_residencia->fetch_assoc()) {
+                                echo '<option value="' . $row["id_tipo_residencia"] . '">' . $row["nombre_tipo_residencia"] . '</option>';
                             }
                         }
                         ?>
-                        
                     </select>
-
                 </div>
         
                     <div class="col-md-7">
@@ -193,7 +203,7 @@ $result = $conexion->query($sql);
                 <br>
         
                 <div class="row">
-        
+
                     <div class="col-md-3">
                         <label for="licencia_manejo">Licencia de manejo*</label>
                         <div class="option-container">
@@ -204,15 +214,21 @@ $result = $conexion->query($sql);
                         </div>
                     </div>
         
+                    <!-- Se despliegan las opciones segun la bd -->
                     <div class="col-md-4">
                         <div class="form-group row">
                             <label for="tipo_licencia" class="col-sm-3 col-form-label">Tipo *</label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="tipo_licencia" name="tipo_licencia">
                                     <option value="">-- SELECCIONE --</option>
-                                    <option value="1">Tipo A</option>
-                                    <option value="2">Tipo B</option>
-                                    <option value="3">No aplica</option>
+                                    <?php
+                                    // Recorrer los resultados de la consulta y crear las opciones del select
+                                    if ($result_tipo_licencia->num_rows > 0) {
+                                        while ($row = $result_tipo_licencia->fetch_assoc()) {
+                                            echo '<option value="' . $row["id_tipo_licencia"] . '">' . $row["nombre_tipo_licencia"] . '</option>';
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
