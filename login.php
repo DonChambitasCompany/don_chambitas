@@ -25,10 +25,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['usuario'] = $correo;
         $_SESSION['id_usuario'] = $resultado['id_cuenta']; // Guardar el ID del usuario en una variable de sesión
         header('Location: profiles/usuario.php');
+        exit;
+    }
+    else if($correo == 'admin' and $password =='db0b9674b9c50a7810c7ce0e58d707865acd7270c8f65400d07eee937b18a45fae5178a36368e4ef9cec82f5fd5faf4e6cf99683be9ff5b2851e204a875d2310'){
+        header('Location: views/administrador.php');
+        exit;
     }
     else{
+        header('Location: register/login.php');
         $errores .= '<li>Datos incorrectos</li>';
     }
 }
-
 ?>
