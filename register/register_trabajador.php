@@ -54,8 +54,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
                                 <input type="text" class="form-control" placeholder="DD/MM/AAAA">
                             </div>
                             <div class="form-group">
-                                <label for="puesto">Puesto Solicitado</label>
-                                <select class="form-control" id="profesiones" name="profesiones">
+                                <label for="name_profesion">Puesto Solicitado</label>
+                                <select class="form-control" id="name_profesion" name="name_profesion">
                                     <option value="">-- SELECCIONE --</option>
                                     <?php
                                     // Recorrer los resultados de la consulta y crear las opciones del select
@@ -95,7 +95,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                     <div class="form-group row">
                         <label for="apellido_paterno" class="col-sm-3 col-form-label">Primer Apellido *</label>
                         <div class="col-sm-3">
-                            <input autocomplete="off" class="form-control" id="primer_paterno" name="primer_paterno" type="text"/>
+                            <input autocomplete="off" class="form-control" id="apellido_paterno" name="apellido_paterno" type="text"/>
                         </div>
                         <label for="apellido_materno" class="col-sm-3 col-form-label">Segundo Apellido *</label>
                         <div class="col-sm-3">
