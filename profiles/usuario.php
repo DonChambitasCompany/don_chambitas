@@ -169,6 +169,38 @@ if (!isset($_SESSION['usuario'])) { //comprobar si ya está la sesión
             </div>
         </section>
     </main>
+            
+        </div>
+    </section>
+    <section id="history"  style="display: none;">
+        <div class="profile__cont" align="center" ><!--Tabla para mostrar historial trabajos-->
+            <table>
+                <thead>
+                  <tr>
+                    <th><h2>Fecha</h2></th>
+                    <th><h2>Servicio</h2></th>
+                    <th><h2>Dirección</h2></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><h3>15-Agosto-2023</h3></td>
+                    <td><h3>Tubería dañada</h3><br><h3>Costo : $15,000</h3></td>
+                    <td><h3>Av. Las FLores #25 <br>Col.Cerezos CP.73410</h3></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </section>
+    <section id="configuration" style="display: none;" >
+        <div class="profile__cont" align="center">
+            <h2><a href="../banco/pago.html">Datos bancarios</a><h2><br><br>
+            <h2><a href="informacion.php">Mostrar Información</a></h2><br><br>
+            <h2><a href="#">Reportar Un Problema</a></h2><br><br>
+            <h2><a href="#">Eliminar Cuenta</a></h2><br>
+        </div>
+    </section>
+</main>
 </body>
 <script src="elementosPerfil.js" type="text/Javascript"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
