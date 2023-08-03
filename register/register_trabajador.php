@@ -278,12 +278,23 @@ $result_profesiones = $conexion->query($sql_profesiones);
             </div>
         </div>
         
+    <!-- Contenedor flex para los botones -->
+            <div class="button-container">
+                <!-- Botón "Regresar" -->
+                <div class="custom-button">
+                    <a href="../index.php"><button type="button"  id="return-button">Regresar</button></a>
+                </div>
 
+                <!-- Botón "Enviar" -->
+                <div class="custom-button">
+                    <button type="sumbmit" id="submit-button">Enviar</button>
+                </div>
+            </div>
 
-
-
-
-
+            <br>
+            <br>
+            <br>
+        </form>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
