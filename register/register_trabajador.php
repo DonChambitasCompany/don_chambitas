@@ -46,7 +46,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
                 <div class="row">
                     <div class="col-md-4">
                         <div id="cuadro_foto">
-                            <img src="" alt="Foto" id="photo">
+                            <label for="imagen">Subir foto <strong style="color: red;">*</strong></label>
+                            <input type="file">
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -88,18 +89,18 @@ $result_profesiones = $conexion->query($sql_profesiones);
             <div class="card-body">
 
                 <div class="form-group row">
-                    <label for="nombre_usuario" class="col-sm-3 col-form-label">Nombre(s) *</label>
+                    <label for="nombre_usuario" class="col-sm-3 col-form-label">Nombre(s) <strong style="color: red;">*</strong></label>
                     <div class="col-sm-9">
                         <input autocomplete="off" class="form-control" type="text" data-val-required="El nombre es obligatorio." id="nombre_usuario" name="nombre_usuario"/>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="apellido_paterno" class="col-sm-3 col-form-label">Primer Apellido *</label>
+                    <label for="apellido_paterno" class="col-sm-3 col-form-label">Primer Apellido <strong style="color: red;">*</strong></label>
                     <div class="col-sm-3">
                         <input autocomplete="off" class="form-control" id="primer_apellido" name="primer_apellido" type="text"/>
                     </div>
-                    <label for="apellido_materno" class="col-sm-3 col-form-label">Segundo Apellido *</label>
+                    <label for="apellido_materno" class="col-sm-3 col-form-label">Segundo Apellido <strong style="color: red;">*</strong></label>
                     <div class="col-sm-3">
                         <input autocomplete="off" class="form-control" id="apellido_materno" name="apellido_materno" type="text" />
                     </div>
@@ -112,28 +113,28 @@ $result_profesiones = $conexion->query($sql_profesiones);
                         </div>
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="name_country" class="col-sm-3 col-form-label">País *</label>
+                                <label for="name_country" class="col-sm-3 col-form-label">País <strong style="color: red;">*</strong></label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" class="form-control" id="name_country" name="name_country" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="name_estado_o_provincia" class="col-sm-3 col-form-label">Cuidad *</label>
+                                <label for="name_estado_o_provincia" class="col-sm-3 col-form-label">Cuidad <strong style="color: red;">*</strong></label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" class="form-control" id="name_estado_o_provincia" name="name_estado_o_provincia" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="correo_electronico" class="col-sm-3 col-form-label">Correo Electronico *</label>
+                                <label for="correo_electronico" class="col-sm-3 col-form-label">Correo Electronico <strong style="color: red;">*</strong></label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" class="form-control" id="correo_electronico" name="correo_electronico" type="text"/>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="my_password" class="col-sm-3 col-form-label">Contraseña *</label>
+                                <label for="my_password" class="col-sm-3 col-form-label">Contraseña <strong style="color: red;">*</strong></label>
                                 <div class="col-sm-9">
                                     <input autocomplete="off" class="form-control" id="my_password" name="my_password" type="text" value="" />
                                 </div>
@@ -160,17 +161,17 @@ $result_profesiones = $conexion->query($sql_profesiones);
         
                 <div class="row">
                     <div class="col-md-4">
-                        <label for="numero_curp">Número de CURP *</label>
+                        <label for="numero_curp">Número de CURP <strong style="color: red;">*</strong></label>
                         <input type="text" class="form-control" id="numero_curp" name="numero_curp" placeholder="Escribe tu CURP">
                     </div>
         
                     <div class="col-md-4">
-                        <label for="numero_cartilla_militar">Número de Cartilla de Servicio Militar *</label>
+                        <label for="numero_cartilla_militar">Número de Cartilla de Servicio Militar <strong style="color: red;">*</strong></label>
                         <input type="text" class="form-control" id="numero_cartilla_militar" name="numero_cartilla_militar"  placeholder="Escribe el número del servicio militar">
                     </div>
         
                     <div class="col-md-4">
-                        <label for="numero_pasaporte">Número de Pasaporte *</label>
+                        <label for="numero_pasaporte">Número de Pasaporte <strong style="color: red;">*</strong></label>
                         <input type="text" class="form-control" id="numero_pasaporte" name="numero_pasaporte"  placeholder="Escribe el número de Pasaporte">
                     </div>
                 </div>
@@ -208,7 +209,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                 <div class="row">
 
                     <div class="col-md-3">
-                        <label for="licencia_manejo">Licencia de manejo*</label>
+                        <label for="licencia_manejo">Licencia de manejo <strong style="color: red;">*</strong></label>
                         <div class="option-container">
                             <input type="radio" id="opcion_si" name="licencia_manejo" value="Si">
                             <label for="opcion_si" class="option-label">Sí</label>
@@ -220,7 +221,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                     <!-- Se despliegan las opciones segun la bd -->
                     <div class="col-md-4">
                         <div class="form-group row">
-                            <label for="tipo_licencia" class="col-sm-3 col-form-label">Tipo *</label>
+                            <label for="tipo_licencia" class="col-sm-3 col-form-label">Tipo <strong style="color: red;">*</strong></label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="tipo_licencia" name="tipo_licencia">
                                     <option value="">-- SELECCIONE --</option>
@@ -239,7 +240,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
         
                     <div class="col-md-5">
                         <div class="form-group row">
-                            <label for="numero_licencia" class="col-sm-4 col-form-label">Número *</label>
+                            <label for="numero_licencia" class="col-sm-4 col-form-label">Número <strong style="color: red;">*</strong></label>
                             <div class="col-sm-8">
                                 <input autocomplete="off" class="form-control" id="numero_licencia" maxlength="50" name="numero_licencia" type="text" value="" />
                             </div>
@@ -259,19 +260,19 @@ $result_profesiones = $conexion->query($sql_profesiones);
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="universidad">Universidad</label>
+                    <label for="universidad">Universidad <strong style="color: red;">*</strong></label>
                     <input type="text" class="form-control" placeholder="Nombre de la universidad donde estudiaste">
                 </div>
                 <div class="form-group">
-                    <label for="titulo">Título Obtenido</label>
+                    <label for="titulo">Título Obtenido <strong style="color: red;">*</strong></label>
                     <input type="file" class="form-control" placeholder="Ingresa el título que obtuviste">
                 </div>
                 <div class="form-group">
-                    <label for="anio">Año de Graduación</label>
+                    <label for="anio">Año de Graduación <strong style="color: red;">*</strong></label>
                     <input type="text" class="form-control" placeholder="DD/MM/AAAA">
                 </div>
                 <div class="form-group">
-                    <label for="proyectos">Proyectos Destacados</label>
+                    <label for="proyectos">Proyectos Destacados <strong style="color: red;">*</strong></label>
                     <textarea class="form-control" placeholder="Menciona algunos proyectos destacados en los que participaste durante tus estudios"></textarea>
                 </div>
             </div>

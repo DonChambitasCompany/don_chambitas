@@ -17,34 +17,9 @@ session_start();
     <header>
         <?php include 'header.php'?>
     </header>
-
-    <div class="container" id="contenedor-mostrar-precio">
-        <div class="row">
-                <div class="container mt-4">
-                <div class="col-md-6 mx-auto">
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                <p>Mostrar el precio total</p>
-                            </div>
-                            <div class="divider"> 
-                            </div>
-                            <div>
-                                <p class="text-muted small">Incluidas todas las tarifas, sin contar los impuestos</p>
-                            </div>
-                            <div>
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="toggleSwitch" />
-                                    <span class="toggle-switch-label"></span>
-                                    <span class="success-icon">&#10003;</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<br>
+<br>
+<br>
         <div class="container" id="TITTLE">
             <div class="row">
                     <div class="container mt-4">
@@ -55,7 +30,7 @@ session_start();
                 </div>
         <!--CATEGORÍAS DE TRABAJOS-->
         <div class="container">
-            <h2 class="mt-lg-5 mb-4" id="categorias">¿QUÈ TIPO DE SERVICIO LE GUSTARÍA SOLICITAR?</h2>
+            <h2 class="mt-lg-5 mb-4" id="categorias">¿QUÉ TIPO DE SERVICIO LE GUSTARÍA SOLICITAR?</h2>
             <div class="row">
                
                 <div class="col-md-3 mb-4">
@@ -117,14 +92,16 @@ session_start();
                 echo '<div class="container"><div class="row">';
             }
             ?>
-            <div class="col-md-3 text-center">
-                <div class="card">
-                    <h2><?php echo $row['nombre_usuario']; ?></h2>
-                    <p><?php echo $row['edad']; ?></p>
-
-                    <button class="btn">Solicitar servicio</button>
+                <div class="col-md-3 text-center">
+                    <div class="card">
+                        <h2><?php echo $row['nombre_usuario']; ?></h2>
+                        <p><?php echo $row['imagen']; ?></p>
+                        <div class="container">
+                            <button class="btn m-4">Solicitar servicio</button>
+                            <br>
+                        </div>
+                    </div>
                 </div>
-            </div>
             <?php
             $count++;
             if ($count % 4 === 0) {
@@ -143,159 +120,11 @@ session_start();
     // Cerrar la conexión
     $conexion->close();
     ?>
-        <!--TRABAJADORES top-->
-    <div class="container">
-        <h2 class="mt-lg-5 mb-4" id="trabajo">TOP TRABAJADORES</h2>
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card d-flex flex-column align-items-center pulso">
-                    <img src="assets/hombre_principal.png" class="card-img-top small-image" alt="Imagen 1" data-bs-toggle="modal" data-bs-target="#exampleModal"   >
-                    <div class="card-body">
-                        <h5 class="card-title">Mecánico, Puebla, México 4.5 ★</h5>
-                        <p class="card-text">a 2.67km de distancia</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Las otras tarjetas -->
-        </div>
-    </div>
+   
     <!--MODAL DE TRABAJADOR-->
+
     <!-- Button trigger modal -->  
+
   <!-- Modal -->
   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -333,7 +162,7 @@ session_start();
 
     <!-- INICIA EL FOOTER -->
 
-    <footer class="bg-light text-center text-lg-start"><!--Arreglar width-->
+    <footer class="bg-light text-center text-lg-start w-100"><!--Arreglar width-->
         <div class="container p-4 pb-0">
           <form action="">
             <div class="row">
