@@ -138,15 +138,13 @@ if (!isset($_SESSION['usuario'])){//comprobar si ya está la sesión
                   </tr>
                 </tbody>
               </table>
-            
         </div>
     </section>
     <section id="configuration" style="display: none;" >
         <div class="profile__cont" align="center">
-            <h2><a href="../banco/pago.html">Datos bancarios</a><h2><br>
-            <h2><a href="#">Actualizar Nombre</a></h2><br>
-            <h2><a href="#">Actualizar Dirección</a></h2><br>
-            <h2><a href="#">Reportar Un Problema</a></h2><br>
+            <h2><a href="../banco/pago.html">Datos bancarios</a><h2><br><br>
+            <h2><a href="informacion.php">Mostrar Información</a></h2><br><br>
+            <h2><a href="#">Reportar Un Problema</a></h2><br><br>
             <h2><a href="#">Eliminar Cuenta</a></h2><br>
         </div>
     </section>
