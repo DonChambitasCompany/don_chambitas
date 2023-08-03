@@ -9,7 +9,7 @@ $nombre_usuario = $_POST["nombre_usuario"];
 $apellido_paterno = $_POST["apellido_paterno"];
 $apellido_materno = $_POST["apellido_materno"];
 $edad = $_POST["edad"];
-$imagen = $_FILES['imagen'];
+// $imagen = $_FILES['imagen'];
 
 //tabla cuentas
 $my_password = $_POST["my_password"];
@@ -67,8 +67,17 @@ $conexion->begin_transaction();
 
         // Insertar los datos en la tabla "usuarios"
         $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, imagen, cuenta_id, address_id ) 
-                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, $imagen, $id_cuenta, $id_address)";
+                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, null, $id_cuenta, $id_address)";
         $conexion->query($insertar_usuario);
+
+
+        // Obtener el id_usuario recién generado
+        $id_usuario = $conexion->insert_id;
+
+        // Insertar los datos en la tabla "clientes"
+        $insertar_clientes = "INSERT INTO clientes(usuario_id)
+        VALUES ($id_usuario)";
+        $conexion->query($insertar_clientes);
 
         // Obtener el id_usuario recién generado
         $id_usuario = $conexion->insert_id;
