@@ -13,6 +13,7 @@ $apellido_materno = $_POST["apellido_materno"];
 
 //tabla cuentas
 $my_password = $_POST["my_password"];
+$my_password = hash('sha512', $my_password);
 $correo_electronico = $_POST["correo_electronico"];
 
 //tabla contactos
