@@ -16,6 +16,12 @@
 form div input{
     padding: 15px;
 }
+#imagen{
+    margin-top: 9px;
+    height: 100;
+    justify-content: center;
+    border-bottom: none;
+}
 
 .container{
     background-image: url(../assets/MORENO.jpg);
@@ -85,6 +91,9 @@ input {
     align-items: center;
 }
 
+.input{
+    height: 400px;
+}
 
 
 .form-box h2 {

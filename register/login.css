@@ -5,6 +5,10 @@
     border-bottom: 2px solid #162938;/*linea debajo de cada espacio*/
     margin: 30px 0;
 }
+.imagen{
+    size: 12px;
+}
+
 
 .input-box label{ 
     position: absolute;

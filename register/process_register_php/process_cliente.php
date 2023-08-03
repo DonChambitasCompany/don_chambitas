@@ -9,6 +9,7 @@ $nombre_usuario = $_POST["nombre_usuario"];
 $apellido_paterno = $_POST["apellido_paterno"];
 $apellido_materno = $_POST["apellido_materno"];
 $edad = $_POST["edad"];
+$imagen = $_FILES['imagen'];
 
 //tabla cuentas
 $my_password = $_POST["my_password"];
@@ -31,8 +32,6 @@ $estado_o_provincia = $_POST["estado_o_provincia"];
 
 //tabla codigo postal
 $numero_codigo_postal = $_POST["numero_codigo_postal"];
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,8 +66,8 @@ $conexion->begin_transaction();
         $id_address = $conexion->insert_id;
 
         // Insertar los datos en la tabla "usuarios"
-        $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, cuenta_id, address_id) 
-                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, $id_cuenta, $id_address)";
+        $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, imagen, cuenta_id, address_id ) 
+                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, $imagen, $id_cuenta, $id_address)";
         $conexion->query($insertar_usuario);
 
         // Obtener el id_usuario recién generado

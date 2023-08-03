@@ -180,6 +180,9 @@ a{
     background-color: #e5e5e5;
     margin: 10px 0;
 }
+.imagen{
+    size: 12px;
+}
 
 
 .toggle-switch {
