@@ -1,7 +1,7 @@
 <?php 
 if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas', 'root', '75628491d');
+        $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas', 'root', '');
         
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
