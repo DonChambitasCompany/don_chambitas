@@ -27,14 +27,12 @@ $result_profesiones = $conexion->query($sql_profesiones);
     <!-- Estilos de Bootstrap (se carga desde un CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="register_trabajador.css">
 </head>
 
 <body>
     <div class='container'>
-    <br>
-        <a href="../index.php"><button type="button" class="buton btn-dark">Volver al inicio</button></a>
-    </div>
+    
     <div class="container mt-5">
 
         <!-- Primera parte de la solicitud de empleo -->
