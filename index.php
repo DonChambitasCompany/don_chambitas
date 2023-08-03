@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+include 'register/process_register_php/conexion.php';
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,6 +102,47 @@
                 </div>
                 
         </div>
+        <?php
+    // Consulta para obtener los datos de la tabla
+    $sql = "SELECT * FROM usuarios
+        where rol_id = 2;
+    ";
+    $result = $conexion->query($sql);
+
+    if ($result->num_rows > 0) {
+        $count = 0; // Contador para controlar las columnas
+        while ($row = $result->fetch_assoc()) {
+            if ($count % 4 === 0) {
+                // Cada 4 registros, inicia una nueva fila
+                echo '<div class="container"><div class="row">';
+            }
+            ?>
+            <div class="col-md-3 text-center">
+                <div class="card">
+                    <h2><?php echo $row['nombre_usuario']; ?></h2>
+                    <p><?php echo $row['edad']; ?></p>
+
+                    <button class="btn">Solicitar servicio</button>
+                </div>
+            </div>
+            <?php
+            $count++;
+            if ($count % 4 === 0) {
+                // Cada 4 registros, cierra la fila
+                echo '</div></div>';
+            }
+        }
+        // Si el último grupo de registros no llenó una fila completa, cierra la fila
+        if ($count % 4 !== 0) {
+            echo '</div></div>';
+        }
+    } else {
+        echo "No se encontraron datos en la tabla.";
+    }
+
+    // Cerrar la conexión
+    $conexion->close();
+    ?>
         <!--TRABAJADORES top-->
     <div class="container">
         <h2 class="mt-lg-5 mb-4" id="trabajo">TOP TRABAJADORES</h2>
