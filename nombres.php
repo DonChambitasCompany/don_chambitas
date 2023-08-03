@@ -2,7 +2,7 @@
 // Verifica si existe una sesión activa y si el ID del usuario está disponible en $_SESSION.
 if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
     try {
-        $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas', 'root', '75628491d');
+        $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas', 'root', '');
         
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
