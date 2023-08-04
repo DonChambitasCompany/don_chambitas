@@ -35,7 +35,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
     
     <div class="container mt-5">
         
-         <form id="process_trabajador" action="process_register_php/process_trabajador.php" method="POST">
+         <form id="process_trabajador" action="process_register_php/process_trabajador.php" method="POST" enctype="multipart/form-data">
+
             <!-- Primera parte de la solicitud de empleo -->
             <div class="card mb-3">
                 <div class="card-header bg-dark text-white">
@@ -46,18 +47,18 @@ $result_profesiones = $conexion->query($sql_profesiones);
                         <div class="col-md-4">
                             <div id="cuadro_foto">
                                 <label for="imagen">Subir foto <strong style="color: red;">*</strong></label>
-                                <input type="file">
+                                <input type="file" id="imagen" name="imagen">
                             </div>
                         </div>
                         <div class="col-md-8">
                             <p>Es necesario llenar todos los campos con la información correcta</p>
                             <div class="form-group">
                                 <label for="fecha">Fecha</label>
-                                <input type="text" class="form-control" placeholder="DD/MM/AAAA">
+                                <input type="text" class="form-control" id="fecha" name="fecha" placeholder="DD/MM/AAAA">
                             </div>
                             <div class="form-group">
-                                <label for="puesto">Puesto Solicitado</label>
-                                <select class="form-control" id="profesiones" name="profesiones">
+                                <label for="name_profesion">Puesto Solicitado</label>
+                                <select class="form-control" id="name_profesion" name="name_profesion">
                                     <option value="">-- SELECCIONE --</option>
                                     <?php
                                     // Recorrer los resultados de la consulta y crear las opciones del select
@@ -71,8 +72,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
 
                             </div>
                             <div class="form-group">
-                                <label for="sueldo">Sueldo deseado</label>
-                                <input type="text" class="form-control" placeholder="Escribe tu sueldo deseado">
+                                <label for="sueldo_deseado">Sueldo deseado</label>
+                                <input type="text" class="form-control" id="sueldo_deseado" name="sueldo_deseado" placeholder="Escribe tu sueldo deseado">
                             </div>
                         </div>
                     </div>
@@ -90,14 +91,14 @@ $result_profesiones = $conexion->query($sql_profesiones);
                     <div class="form-group row">
                         <label for="nombre_usuario" class="col-sm-3 col-form-label">Nombre(s) <strong style="color: red;">*</strong></label>
                         <div class="col-sm-9">
-                            <input autocomplete="off" class="form-control" type="text" data-val-required="El nombre es obligatorio." id="nombre_usuario" name="nombre_usuario"/>
+                            <input autocomplete="off" class="form-control" type="text" id="nombre_usuario" name="nombre_usuario"/>
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="apellido_paterno" class="col-sm-3 col-form-label">Primer Apellido <strong style="color: red;">*</strong></label>
                         <div class="col-sm-3">
-                            <input autocomplete="off" class="form-control" id="primer_apellido" name="primer_apellido" type="text"/>
+                            <input autocomplete="off" class="form-control" id="apellido_paterno" name="apellido_paterno" type="text"/>
                         </div>
                         <label for="apellido_materno" class="col-sm-3 col-form-label">Segundo Apellido <strong style="color: red;">*</strong></label>
                         <div class="col-sm-3">
@@ -107,46 +108,92 @@ $result_profesiones = $conexion->query($sql_profesiones);
 
                     <div id="cfdiData" class="mt-4">
                         <div class="card">
-                            <div class="card-header bg-dark text-white">
-                                <h4>Asegúrese que estos datos sean de la zona donde se encuentra</h4>
+                            <div class="card-header bg-primary text-white">
+                                <h4>Datos de contacto</h4>
                             </div>
                             <div class="card-body">
-                                <div class="form-group row">
-                                    <label for="name_country" class="col-sm-3 col-form-label">País <strong style="color: red;">*</strong></label>
-                                    <div class="col-sm-9">
-                                        <input autocomplete="off" class="form-control" id="name_country" name="name_country" type="text"/>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="form-group row">
-                                    <label for="name_estado_o_provincia" class="col-sm-3 col-form-label">Cuidad <strong style="color: red;">*</strong></label>
-                                    <div class="col-sm-9">
-                                        <input autocomplete="off" class="form-control" id="name_estado_o_provincia" name="name_estado_o_provincia" type="text"/>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="correo_electronico" class="col-sm-3 col-form-label">Correo Electronico <strong style="color: red;">*</strong></label>
+                                    <label for="correo_electronico" class="col-sm-3 col-form-label">Correo Electronico *</label>
                                     <div class="col-sm-9">
                                         <input autocomplete="off" class="form-control" id="correo_electronico" name="correo_electronico" type="text"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="my_password" class="col-sm-3 col-form-label">Contraseña <strong style="color: red;">*</strong></label>
+                                    <label for="my_password" class="col-sm-3 col-form-label">Contraseña *</label>
                                     <div class="col-sm-9">
-                                        <input autocomplete="off" class="form-control" id="my_password" name="my_password" type="text" value="" />
+                                        <input autocomplete="off" class="form-control" id="my_password" name="my_password" type="text"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="telefono" class="col-sm-3 col-form-label">Telefono *</label>
+                                    <div class="col-sm-9">
+                                        <input autocomplete="off" class="form-control" id="telefono" name="telefono" type="text"/>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <br>
+
+
+            <!-- Tercera parte del formulario -->
+
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3><i class="fas fa-file-alt"></i> Dirección</h3>
+                </div>
             
-            <!-- Tercera parte de la solicitud de empleo -->
+                <div class="card-body">
+            
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="name_country">País *</label>
+                            <input type="text" class="form-control" id="name_country" name="name_country" placeholder="">
+                        </div>
+            
+                        <div class="col-md-6">
+                            <label for="estado_o_provincia">Estado o provincia *</label>
+                            <input type="text" class="form-control" id="estado_o_provincia" name="estado_o_provincia"  placeholder="">
+                        </div>  
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="numero_codigo_postal">Codigo postal *</label>
+                            <input type="text" class="form-control" id="numero_codigo_postal" name="numero_codigo_postal" placeholder="">
+                        </div>
+            
+                        <div class="col-md-6">
+                            <label for="calle">Calle *</label>
+                            <input type="text" class="form-control" id="calle" name="calle"  placeholder="">
+                        </div>  
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="numero_interior">Numero Interior *</label>
+                            <input type="text" class="form-control" id="numero_interior" name="numero_interior" placeholder="">
+                        </div>
+            
+                        <div class="col-md-6">
+                            <label for="numero_exterior">Numero Exterior *</label>
+                            <input type="text" class="form-control" id="numero_exterior" name="numero_exterior"  placeholder="">
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Cuarta parte de la solicitud de empleo -->
 
             <div class="card">
                 <div class="card-header bg-dark text-white">
@@ -182,8 +229,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
                     <!-- Se despliegan las opciones segun la bd -->
 
                     <div class="col-md-5">
-                        <label for="residencia">¿Es extranjero?</label>
-                        <select class="form-control" id="residencia" name="residencia">
+                        <label for="nombre_tipo_residencia">¿Es extranjero?</label>
+                        <select class="form-control" id="nombre_tipo_residencia" name="nombre_tipo_residencia">
                             <option value="">-- SELECCIONE --</option>
                             <?php
                             // Recorrer los resultados de la consulta y crear las opciones del select
@@ -220,9 +267,9 @@ $result_profesiones = $conexion->query($sql_profesiones);
                         <!-- Se despliegan las opciones segun la bd -->
                         <div class="col-md-4">
                             <div class="form-group row">
-                                <label for="tipo_licencia" class="col-sm-3 col-form-label">Tipo <strong style="color: red;">*</strong></label>
+                                <label for="nombre_tipo_licencia" class="col-sm-3 col-form-label">Tipo <strong style="color: red;">*</strong></label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="tipo_licencia" name="tipo_licencia">
+                                    <select class="form-control" id="nombre_tipo_licencia" name="nombre_tipo_licencia">
                                         <option value="">-- SELECCIONE --</option>
                                         <?php
                                         // Recorrer los resultados de la consulta y crear las opciones del select
@@ -251,7 +298,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
             
             <br>
 
-            <!-- Cuarta parte de la solicitud de empleo -->
+            <!-- Quinta parte de la solicitud de empleo -->
 
             <div class="card mb-3">
                 <div class="card-header bg-dark text-white">
@@ -259,20 +306,20 @@ $result_profesiones = $conexion->query($sql_profesiones);
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="universidad">Universidad <strong style="color: red;">*</strong></label>
-                        <input type="text" class="form-control" placeholder="Nombre de la universidad donde estudiaste">
+                        <label for="nombre_universidad">Universidad <strong style="color: red;">*</strong></label>
+                        <input type="text" class="form-control" id="nombre_universidad" name="nombre_universidad" placeholder="Nombre de la universidad donde estudiaste">
                     </div>
                     <div class="form-group">
-                        <label for="titulo">Título Obtenido <strong style="color: red;">*</strong></label>
-                        <input type="file" class="form-control" placeholder="Ingresa el título que obtuviste">
+                        <label for="titulo_obtenido">Título Obtenido <strong style="color: red;">*</strong></label>
+                        <input type="file" class="form-control" id="titulo_obtenido" name="titulo_obtenido" placeholder="Ingresa el título que obtuviste">
                     </div>
                     <div class="form-group">
-                        <label for="anio">Año de Graduación <strong style="color: red;">*</strong></label>
-                        <input type="text" class="form-control" placeholder="DD/MM/AAAA">
+                        <label for="year_graduation">Año de Graduación <strong style="color: red;">*</strong></label>
+                        <input type="text" class="form-control" id="year_graduation" name="year_graduation" placeholder="DD/MM/AAAA">
                     </div>
                     <div class="form-group">
-                        <label for="proyectos">Proyectos Destacados <strong style="color: red;">*</strong></label>
-                        <textarea class="form-control" placeholder="Menciona algunos proyectos destacados en los que participaste durante tus estudios"></textarea>
+                        <label for="proyectos_destacados">Proyectos Destacados <strong style="color: red;">*</strong></label>
+                        <textarea class="form-control" id="proyectos_destacados" name="proyectos_destacados" placeholder="Menciona algunos proyectos destacados en los que participaste durante tus estudios"></textarea>
                     </div>
                 </div>
             </div>
