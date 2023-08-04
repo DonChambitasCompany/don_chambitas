@@ -80,64 +80,64 @@ session_start();
 
         </div>
         <?php
-// Consulta para obtener los datos de la tabla
-$sql = "SELECT *
+        // Consulta para obtener los datos de la tabla
+        $sql = "SELECT *
         FROM usuarios u
         INNER JOIN trabajadores t ON u.id_usuario = t.usuario_id
         INNER JOIN profesiones p ON p.id_profesion = t.profesion_id
         WHERE u.rol = 2";
 
-$result = $conexion->query($sql);
+        $result = $conexion->query($sql);
 
-if ($result->num_rows > 0) {
-    $count = 0; // Contador para controlar las columnas
-    while ($row = $result->fetch_assoc()) {
-        if ($count % 4 === 0) {
-            // Cada 4 registros, inicia una nueva fila
-            echo '<div class="container"><div class="row">';
-        }
+        if ($result->num_rows > 0) {
+            $count = 0; // Contador para controlar las columnas
+            while ($row = $result->fetch_assoc()) {
+                if ($count % 4 === 0) {
+                    // Cada 4 registros, inicia una nueva fila
+                    echo '<div class="container"><div class="row">';
+                }
 
-        $nombre_usuario = $row["nombre_usuario"];
-        $profesion_nombre = $row["name_profesion"];
+                $nombre_usuario = $row["nombre_usuario"];
+                $profesion_nombre = $row["name_profesion"];
 
-        // Muestra la tarjeta con la información del usuario
-        echo '<div class="col-md-3 text-center">';
-        echo '    <div class="card">';
-        echo '        <h2>' . $nombre_usuario . '</h2>';
-        echo '        <h2>' . $profesion_nombre . '</h2>';
-        echo '        <div class="container">';
+                // Muestra la tarjeta con la información del usuario
+                echo '<div class="col-md-3 text-center">';
+                echo '    <div class="card">';
+                echo '        <h2>' . $nombre_usuario . '</h2>';
+                echo '        <h2>' . $profesion_nombre . '</h2>';
+                echo '        <div class="container">';
 
-        // Muestra la imagen si está presente
-        if ($row["imagen"]) {
-            echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="border-radius: 50%;"> ';
+                // Muestra la imagen si está presente
+                if ($row["imagen"]) {
+                    echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="border-radius: 50%;"> ';
+                } else {
+                    echo '            <p>No hay imagen disponible.</p>';
+                }
+
+                echo '            <button class="btn m-4" onclick="solicitarServicio()">Solicitar servicio</button>';
+                echo '            <br>';
+                echo '        </div>';
+                echo '    </div>';
+                echo '</div>';
+
+                $count++;
+
+                if ($count % 4 === 0) {
+                    // Cada 4 registros, cierra la fila
+                    echo '</div></div>';
+                }
+            }
+            // Si el último grupo de registros no llenó una fila completa, cierra la fila
+            if ($count % 4 !== 0) {
+                echo '</div></div>';
+            }
         } else {
-            echo '            <p>No hay imagen disponible.</p>';
+            echo "No se encontraron datos en la tabla.";
         }
 
-        echo '            <button class="btn m-4" onclick="solicitarServicio()">Solicitar servicio</button>';
-        echo '            <br>';
-        echo '        </div>';
-        echo '    </div>';
-        echo '</div>';
-
-        $count++;
-
-        if ($count % 4 === 0) {
-            // Cada 4 registros, cierra la fila
-            echo '</div></div>';
-        }
-    }
-    // Si el último grupo de registros no llenó una fila completa, cierra la fila
-    if ($count % 4 !== 0) {
-        echo '</div></div>';
-    }
-} else {
-    echo "No se encontraron datos en la tabla.";
-}
-
-// Cerrar la conexión
-$conexion->close();
-?>
+        // Cerrar la conexión
+        $conexion->close();
+        ?>
 
 
 
@@ -179,48 +179,24 @@ $conexion->close();
             </div>
         </div>
 
+    </div>
+    <br>
+    <!-- INICIA EL FOOTER -->
+    <?php include 'footer.php'; ?>
+    <!-- TERMINA EL FOOTER -->
 
-        <!-- INICIA EL FOOTER -->
 
-        <footer class="bg-light text-center text-lg-start w-100"><!--Arreglar width-->
-            <div class="container p-4 pb-0">
-                <form action="">
-                    <div class="row">
-                        <div class="col-auto mb-4 mb-md-0">
-                            <p class="pt-2">
-                                <strong>¿Necesitas información?</strong>
-                            </p>
-                        </div>
-                        <div class="col-md-5 col-12 mb-4 mb-md-0">
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form5Example25" class="form-control" placeholder="Correo Electrónico" />
-                            </div>
-                        </div>
-                        <div class="col-auto mb-4 mb-md-0">
-                            <button type="submit" class="btn btn-primary mb-4">
-                                Enviar
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+    <script>
+        const toggleSwitch = document.getElementById('toggleSwitch');
+        let isActive = false;
 
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © 2023 Copyright:
-                <a class="text-dark" href="https://mdbootstrap.com/"><strong>Don Chambitas</strong></a>
-            </div>
-        </footer>
-        <script>
-            const toggleSwitch = document.getElementById('toggleSwitch');
-            let isActive = false;
-
-            toggleSwitch.addEventListener('click', function() {
-                console.log("Entró")
-                isActive = !isActive;
-                toggleSwitch.checked = isActive;
-            });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        toggleSwitch.addEventListener('click', function() {
+            console.log("Entró")
+            isActive = !isActive;
+            toggleSwitch.checked = isActive;
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>
