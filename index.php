@@ -81,7 +81,12 @@ session_start();
         </div>
         <?php
 // Consulta para obtener los datos de la tabla
-$sql = "SELECT * FROM usuarios WHERE rol = 2";
+$sql = "SELECT *
+        FROM usuarios u
+        INNER JOIN trabajadores t ON u.id_usuario = t.usuario_id
+        INNER JOIN profesiones p ON p.id_profesion = t.profesion_id
+        WHERE u.rol = 2";
+
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
@@ -93,11 +98,13 @@ if ($result->num_rows > 0) {
         }
 
         $nombre_usuario = $row["nombre_usuario"];
+        $profesion_nombre = $row["name_profesion"];
 
         // Muestra la tarjeta con la información del usuario
         echo '<div class="col-md-3 text-center">';
         echo '    <div class="card">';
         echo '        <h2>' . $nombre_usuario . '</h2>';
+        echo '        <h2>' . $profesion_nombre . '</h2>';
         echo '        <div class="container">';
 
         // Muestra la imagen si está presente
@@ -107,7 +114,7 @@ if ($result->num_rows > 0) {
             echo '            <p>No hay imagen disponible.</p>';
         }
 
-        echo '            <button class="btn m-4">Solicitar servicio</button>';
+        echo '            <button class="btn m-4" onclick="solicitarServicio()">Solicitar servicio</button>';
         echo '            <br>';
         echo '        </div>';
         echo '    </div>';
@@ -131,6 +138,7 @@ if ($result->num_rows > 0) {
 // Cerrar la conexión
 $conexion->close();
 ?>
+
 
 
         <!--MODAL DE TRABAJADOR-->

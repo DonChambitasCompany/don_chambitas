@@ -1,4 +1,9 @@
+<?php
+    include '../register/process_register_php/conexion.php';
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -34,7 +39,8 @@
             <div class="container text-center text-light fw-bold">
                 <div class="offcanvas-title">
                     <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" height="170" width="170" class="rounded-circle ">
-                    <p>@Administrador</p>
+                    <div class="container">
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,13 +52,13 @@
                 <ul class=" border-primary">
                     <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Dashboard</a></li>
                     <br>
-                    <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Trabajadores</a></li>
+                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/trabajadores.php" class="text-decoration-none text-black">Trabajadores</a></li>
                     <br>
-                    <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Clientes</a></li>
+                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/clientes.php" class="text-decoration-none text-black">Clientes</a></li>
                     <br>
-                    <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Servicios</a></li>
+                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/servicios.php" class="text-decoration-none text-black">Servicios</a></li>
                     <br>
-                    <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
+                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/aceptar_denegar.php" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
                 </ul>
             </div>
         </div>
