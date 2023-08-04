@@ -81,10 +81,12 @@ session_start();
         </div>
         <?php
         // Consulta para obtener los datos de la tabla
-        $sql = "SELECT *
-        FROM usuarios u
-        INNER JOIN trabajadores t ON u.id_usuario = t.usuario_id
-        INNER JOIN profesiones p ON p.id_profesion = t.profesion_id
+                $sql = "SELECT *
+        FROM usuarios AS u
+        INNER JOIN trabajadores AS t ON u.id_usuario = t.usuario_id
+        INNER JOIN profesiones AS p ON p.id_profesion = t.profesion_id
+        INNER JOIN addresses AS a ON a.id_address = u.address_id
+        INNER JOIN countries AS c ON c.id_country = a.country_id
         WHERE u.rol = 2";
 
         $result = $conexion->query($sql);
@@ -99,6 +101,9 @@ session_start();
 
                 $nombre_usuario = $row["nombre_usuario"];
                 $profesion_nombre = $row["name_profesion"];
+                $calle = $row['calle'];
+                $num_calle = $row['numero_exterior'];
+                $pais = $row['name_country'];
 
                 // Muestra la tarjeta con la información del usuario
                 echo '<div class="col-md-3 text-center">';
@@ -106,6 +111,7 @@ session_start();
                 echo '        <h2>' . $nombre_usuario . '</h2>';
                 echo '        <h2>' . $profesion_nombre . '</h2>';
                 echo '        <div class="container">';
+                echo '        <h6>'. $calle .'&nbsp'. $num_calle .'<br>'. $pais . '</h6>';
 
                 // Muestra la imagen si está presente
                 if ($row["imagen"]) {
