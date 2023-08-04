@@ -2,10 +2,6 @@
 // Incluir el archivo de conexión
 include "process_register_php/conexion.php";
 
-// Realizar la primera consulta para obtener las opciones de tipo_residencia
-$sql_tipo_residencia = "SELECT id_tipo_residencia, nombre_tipo_residencia FROM tipo_residencia";
-$result_tipo_residencia = $conexion->query($sql_tipo_residencia);
-
 // Realizar la primera consulta para obtener las opciones de tipo_licencia
 $sql_tipo_licencia = "SELECT id_tipo_licencia, nombre_tipo_licencia FROM tipo_licencia";
 $result_tipo_licencia = $conexion->query($sql_tipo_licencia);
@@ -206,20 +202,20 @@ $result_profesiones = $conexion->query($sql_profesiones);
                     </p>
             
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="numero_curp">Número de CURP <strong style="color: red;">*</strong></label>
                             <input type="text" class="form-control" id="numero_curp" name="numero_curp" placeholder="Escribe tu CURP">
                         </div>
             
-                        <div class="col-md-4">
-                            <label for="numero_cartilla_militar">Número de Cartilla de Servicio Militar <strong style="color: red;">*</strong></label>
-                            <input type="text" class="form-control" id="numero_cartilla_militar" name="numero_cartilla_militar"  placeholder="Escribe el número del servicio militar">
+                        <div class="col-md-6">
+                            <label for="rfc">Ingrese su RFC <strong style="color: red;">*</strong></label>
+                            <input type="text" class="form-control" id="rfc" name="rfc"  placeholder="Escribe el número del servicio militar">
                         </div>
             
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <label for="numero_pasaporte">Número de Pasaporte <strong style="color: red;">*</strong></label>
                             <input type="text" class="form-control" id="numero_pasaporte" name="numero_pasaporte"  placeholder="Escribe el número de Pasaporte">
-                        </div>
+                        </div> -->
                     </div>
             
                     <br>
@@ -228,43 +224,16 @@ $result_profesiones = $conexion->query($sql_profesiones);
 
                     <!-- Se despliegan las opciones segun la bd -->
 
-                    <div class="col-md-5">
-                        <label for="nombre_tipo_residencia">¿Es extranjero?</label>
-                        <select class="form-control" id="nombre_tipo_residencia" name="nombre_tipo_residencia">
-                            <option value="">-- SELECCIONE --</option>
-                            <?php
-                            // Recorrer los resultados de la consulta y crear las opciones del select
-                            if ($result_tipo_residencia->num_rows > 0) {
-                                while ($row = $result_tipo_residencia->fetch_assoc()) {
-                                    echo '<option value="' . $row["id_tipo_residencia"] . '">' . $row["nombre_tipo_residencia"] . '</option>';
-                                }
-                            }
-                            ?>
-                        </select>
-                    </div>
-            
-                        <div class="col-md-7">
-                            <label for="doc_extranjero">Si usted es extranjero, adjunte documentación que permita trabajar en el país</label>
-                            <input type="file" class="form-control" id="doc_extranjero" name="doc_extranjero" accept=".pdf, .doc, .docx">
-                        </div>
-            
-                    </div>
-            
-                    <br>
-            
-                    <div class="row">
-
-                        <div class="col-md-3">
-                            <label for="licencia_manejo">Licencia de manejo <strong style="color: red;">*</strong></label>
+                    <div class="col-md-3">
+                            <label for="tiene_licencia">¿Tiene licencia? <strong style="color: red;">*</strong></label>
                             <div class="option-container">
-                                <input type="radio" id="opcion_si" name="licencia_manejo" value="Si">
+                                <input type="radio" id="opcion_si" name="tiene_licencia" value="Si">
                                 <label for="opcion_si" class="option-label">Sí</label>
-                                <input type="radio" id="opcion_no" name="licencia_manejo" value="No">
+                                <input type="radio" id="opcion_no" name="tiene_licencia" value="No">
                                 <label for="opcion_no" class="option-label">No</label>
                             </div>
                         </div>
             
-                        <!-- Se despliegan las opciones segun la bd -->
                         <div class="col-md-4">
                             <div class="form-group row">
                                 <label for="nombre_tipo_licencia" class="col-sm-3 col-form-label">Tipo <strong style="color: red;">*</strong></label>
@@ -283,7 +252,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                                 </div>
                             </div>
                         </div>
-            
+
                         <div class="col-md-5">
                             <div class="form-group row">
                                 <label for="numero_licencia" class="col-sm-4 col-form-label">Número <strong style="color: red;">*</strong></label>
@@ -292,6 +261,27 @@ $result_profesiones = $conexion->query($sql_profesiones);
                                 </div>
                             </div>
                         </div>
+            
+                    </div>
+            
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <label for="tiene_antecedentes_penales">¿Tiene antecedentes penales? <strong style="color: red;">*</strong></label>
+                            <div class="option-container">
+                                <input type="radio" id="opcion_si" name="tiene_antecedentes_penales" value="Si">
+                                <label for="opcion_si" class="option-label">Sí</label>
+                                <input type="radio" id="opcion_no" name="tiene_antecedentes_penales" value="No">
+                                <label for="opcion_no" class="option-label">No</label>
+                            </div>
+                        </div>
+            
+                        <div class="col-md-9">
+                            <label for="doc_antecedentes_penales">Adjunte documentación -Antecedentes penales- para evaluar conforme a su solicitud </label>
+                            <input type="file" class="form-control" id="doc_antecedentes_penales" name="doc_antecedentes_penales" accept=".pdf, .doc, .docx">
+                        </div>
+            
+
                     </div>
                 </div>
             </div>
