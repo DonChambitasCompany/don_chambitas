@@ -11,6 +11,7 @@ $apellido_paterno = $_POST["apellido_paterno"];
 $apellido_materno = $_POST["apellido_materno"];
 $rol = 'cliente'; // Especificamos el valor 'trabajador' para el campo rol
 /*--------------------------------------------------------------------------------*/
+
 $imagen_tmp = $_FILES["imagen"]["tmp_name"];
 // Lee el contenido de la imagen en bytes
 $original_imagen = addslashes(file_get_contents($imagen_tmp));
@@ -53,7 +54,7 @@ $conexion->begin_transaction();
         // Obtener el id_cuenta recién generado
         $id_cuenta = $conexion->insert_id;
 
-        // echo $insertar_cuenta;
+        echo $insertar_cuenta;
 
         //Insertar los datos en la tabla countries
         $insertar_country = "INSERT INTO countries (name_country) 
@@ -127,5 +128,3 @@ $conexion->begin_transaction();
     }
 
 ?>
-
-

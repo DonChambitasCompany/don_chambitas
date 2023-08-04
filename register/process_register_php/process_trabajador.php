@@ -62,6 +62,8 @@ $original_doc_antecedentes_penales = $_FILES["doc_antecedentes_penales"]["name"]
 //tabla licencias
 $numero_licencia = $_POST["numero_licencia"];
 
+
+
 //tabla datos_educacion
 $nombre_universidad = $_POST["nombre_universidad"];
 /*--------------------------------------------------------------------------------*/

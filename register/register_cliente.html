@@ -15,7 +15,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+
+            </div>
+            
             <div class="col-md-6">
                 <div class="wrapper">
                     <h1 id="textoBienvenidaRegistrate">REGÍSTRATE</h1>
@@ -26,7 +29,7 @@
                         <!-- INICIA EL FORMULARIO PRINCIPAL -->
                         <div id="formularioPrincipal">
 
-                            <form id="miFormulario" action="process_register_php/process_cliente.php" method="POST">
+                            <form id="miFormulario" action="process_register_php/process_cliente.php" method="POST" enctype="multipart/form-data">
 
                                 <div class="input-row">
                                     <div class="name">
@@ -71,8 +74,8 @@
                                 <a href="login.php">
                                     <input class="buton buton-black" id="btnMostrarForm" value="Ya tengo una cuenta">
                                 </a>
-                            
                                 </div>
+                            
                                 <!-- TERMINA EL FORMULARIO PRINCIPAL -->
 
 
@@ -88,55 +91,50 @@
                                             <input type="text" placeholder="País" id="name_country" name="name_country">
                                         </div>
                                     </div>
-
+                                
                                     <div class="input-row">
                                         <div class="last-name">
                                             <input type="text" placeholder="Estado" id="estado_o_provincia" name="estado_o_provincia">
                                         </div>
                                         <div class="cellphone-number">
-
-                                            <!-- prendiente porque se repite el numero celular -->
-
-                                            <input type="text" placeholder="Número celular" id="pendiente" name="pendiente">
+                                            <label for="imagen">Subir foto <strong style="color: red;">*</strong></label>
+                                            <input type="file" id="imagen" name="imagen">
                                         </div>
                                     </div>
-
+                                
                                     <div class="input-row">
                                         <div class="numero_codigo_postal">
                                             <input type="text" placeholder="Código Postal" id="numero_codigo_postal" name="numero_codigo_postal">
                                         </div>
-
+                                
                                         <div class="calle">
                                             <input type="text" placeholder="Calle" id="calle" name="calle">
                                         </div>
                                     </div>
-
+                                
                                     <div class="input-row">
                                         <div class="email">
                                             <input type="text" placeholder="Número interior" id="numero_interior" name="numero_interior">
                                         </div>
-
+                                
                                         <div class="email">
                                             <input type="text" placeholder="Número exterior" id="numero_exterior" name="numero_exterior">
                                         </div>
                                     </div>
-
+                                
                                     <br>
-
+                                
                                     <div class="input-row" id="" style="display: none">
                                         <h6 style="color: red;">*Por favor, asegúrese de llenar todos los campos.</h6>
                                     </div>
-
+                                
                                     <br><br>
-
-                                    <!-- Botón "Continuar" del segundo formulario -->
-                                    <button type="submit" class="buton" id="enviar">Enviar</button>
-
+                                
+                                    <button type="submit" class="buton" onclick="enviarFormulario()">Enviar</button>
+                                
                                 </div>
-
                             </form>
-                            
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -165,4 +163,3 @@
 
 
 
-</html>
