@@ -14,15 +14,10 @@
 <body>
 
     <div class="container">
-
         <div class="row">
-
             <div class="col-md-6"></div>
-
             <div class="col-md-6">
-
                 <div class="wrapper">
-
                     <h1 id="textoBienvenidaRegistrate">REGÍSTRATE</h1>
 
                     <div class="form-box login">
@@ -31,7 +26,7 @@
                         <!-- INICIA EL FORMULARIO PRINCIPAL -->
                         <div id="formularioPrincipal">
 
-                            <form id="process_cliente" action="process_register_php/process_cliente.php" method="POST" enctype="multipart/form-data">
+                            <form id="miFormulario" action="process_register_php/process_cliente.php" method="POST">
 
                                 <div class="input-row">
                                     <div class="name">
@@ -76,13 +71,14 @@
                                 <a href="login.php">
                                     <input class="buton buton-black" id="btnMostrarForm" value="Ya tengo una cuenta">
                                 </a>
+                            
+                                </div>
                                 <!-- TERMINA EL FORMULARIO PRINCIPAL -->
 
 
                                 <!-- Empieza segundo formulario -->
 
                                 <div id="formularioSecundario" style="display: none">
-
                                     <br>
                                     <div class="input-row">
                                         <div class="name">
@@ -97,9 +93,11 @@
                                         <div class="last-name">
                                             <input type="text" placeholder="Estado" id="estado_o_provincia" name="estado_o_provincia">
                                         </div>
-                                        <div id="cuadro_foto">
-                                            <label for="imagen">Subir foto <strong style="color: red;">*</strong></label>
-                                            <input type="file" id="imagen" name="imagen">
+                                        <div class="cellphone-number">
+
+                                            <!-- prendiente porque se repite el numero celular -->
+
+                                            <input type="text" placeholder="Número celular" id="pendiente" name="pendiente">
                                         </div>
                                     </div>
 
@@ -134,7 +132,6 @@
                                     <!-- Botón "Continuar" del segundo formulario -->
                                     <button type="submit" class="buton" id="enviar">Enviar</button>
 
-
                                 </div>
 
                             </form>
@@ -143,7 +140,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -162,6 +158,10 @@
     
 
 </script>
+
+
+
+</html>
 
 
 
