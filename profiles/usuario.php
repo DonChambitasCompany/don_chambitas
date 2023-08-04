@@ -1,5 +1,4 @@
 <?php
-include 'register/process_register_php/conexion.php';
 
 session_start();
 if (!isset($_SESSION['usuario'])) { //comprobar si ya está la sesión

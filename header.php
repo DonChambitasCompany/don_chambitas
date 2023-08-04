@@ -15,17 +15,19 @@
                 <ul class="nav-links">
                     <li><a href="#trabajo">Top trabajadores</a></li>
                     <li><a href="#categorias">Categorías</a></li>
-                    <li><a href="register/register_trabajador.php">¡Quiero trabajar!</a></li>
                 
-                <?php
+                    <?php
                     if (isset($_SESSION['usuario'])){
+                        $trabajar = '';
                         $perfil = '<a href="profiles/usuario.php">Mi perfil</a>';
                         $boton = '<a href="cerrar.php">Cerrar Sesión</a>';
                     }
                     else{
+                        $trabajar = '<a href="register/register_trabajador.php">¡Quiero trabajar!</a>';
                         $perfil = '';
                         $boton = '<a href="register/login.php">Iniciar Sesión</a>';
                     }?>
+                <li><a href="register/register_trabajador.php"><?php echo $trabajar; ?>
                 <li><a href="profiles/usuario.php"><?php echo $perfil; ?> </li>
                 </ul>
                 <li>

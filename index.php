@@ -79,6 +79,7 @@ session_start();
             </div>
 
         </div>
+        
         <?php
         // Consulta para obtener los datos de la tabla
                 $sql = "SELECT *
@@ -120,7 +121,7 @@ session_start();
                     echo '            <p>No hay imagen disponible.</p>';
                 }
 
-                echo '            <button class="btn m-4" onclick="solicitarServicio()">Solicitar servicio</button>';
+                echo '            <button class="btn m-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="solicitarServicio()">Solicitar servicio</button>';
                 echo '            <br>';
                 echo '        </div>';
                 echo '    </div>';
@@ -145,7 +146,9 @@ session_start();
         $conexion->close();
         ?>
 
-
+<?php
+    include 'categorias/modal.php';
+?>
 
         <!--MODAL DE TRABAJADOR-->
 
@@ -166,7 +169,7 @@ session_start();
                             </div>
                             <div class="info">
                                 <div class="info-item">
-                                    <span class="name"><strong> Gabriel Ramírez Arroyo</strong></span>
+                                    <span class="name"><strong></strong></span>
                                 </div>
                                 <div class="info-item">
                                     <span class="specialty"><em>Fontanero especializado</em></span>

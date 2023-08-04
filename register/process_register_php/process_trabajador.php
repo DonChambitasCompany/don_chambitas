@@ -133,7 +133,7 @@ $conexion->begin_transaction();
 
         //Insertar los datos en la tabla usuarios
         $insertar_usuarios = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, imagen, rol, cuenta_id, address_id) 
-        VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', Null, '$original_imagen', '$rol', $id_cuenta, $id_address)";
+        VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', '$edad', '$original_imagen', '$rol', $id_cuenta, $id_address)";
         $conexion->query($insertar_usuarios);
 
         // Obtener el id_usuario recién generado

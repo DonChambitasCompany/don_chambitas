@@ -31,7 +31,7 @@ $name_country = $_POST["name_country"];
 $calle = $_POST["calle"];
 $numero_interior = $_POST["numero_interior"];
 $numero_exterior = $_POST["numero_exterior"];
-
+$edad = $_POST["edad"];
 //tabla estado o provincia
 $estado_o_provincia = $_POST["estado_o_provincia"];
 
