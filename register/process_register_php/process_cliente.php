@@ -6,14 +6,18 @@ require_once "conexion.php";
 
 //tabla usuarios
 $nombre_usuario = $_POST["nombre_usuario"];
+// $edad = $_POST["edad"];
 $apellido_paterno = $_POST["apellido_paterno"];
 $apellido_materno = $_POST["apellido_materno"];
-$edad = $_POST["edad"];
-// $imagen = $_FILES['imagen'];
+$rol = 'cliente'; // Especificamos el valor 'trabajador' para el campo rol
+/*--------------------------------------------------------------------------------*/
+$imagen_tmp = $_FILES["imagen"]["tmp_name"];
+// Lee el contenido de la imagen en bytes
+$original_imagen = addslashes(file_get_contents($imagen_tmp));
 
 //tabla cuentas
 $my_password = $_POST["my_password"];
-$my_password = hash('sha512', $my_password);
+$my_password = ("$my_password");
 $correo_electronico = $_POST["correo_electronico"];
 
 //tabla contactos
@@ -42,20 +46,24 @@ $conexion->begin_transaction();
 
     try {
 
-        // Insertar los datos en la tabla "cuentas"
+        // Insertar los datos en la tabla cuentas
         $insertar_cuenta = "INSERT INTO cuentas (correo_electronico, my_password) VALUES ('$correo_electronico', '$my_password')";
         $conexion->query($insertar_cuenta);
 
         // Obtener el id_cuenta recién generado
         $id_cuenta = $conexion->insert_id;
 
-        //Insertar los datos en la tabla "countries"
+        // echo $insertar_cuenta;
+
+        //Insertar los datos en la tabla countries
         $insertar_country = "INSERT INTO countries (name_country) 
                             VALUES ('$name_country')";
         $conexion->query($insertar_country);
 
         // Obtener el id_country recién generado
         $id_country = $conexion->insert_id;
+
+        // echo $insertar_country;
 
         //Insertar los datos en la tabla "addresses"
         $insertar_address = "INSERT INTO addresses (calle, numero_interior, numero_exterior, country_id) 
@@ -65,14 +73,20 @@ $conexion->begin_transaction();
         // Obtener el id_address recién generado
         $id_address = $conexion->insert_id;
 
+        // echo $insertar_address;
+
+        
+
         // Insertar los datos en la tabla "usuarios"
         $insertar_usuario = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, imagen, cuenta_id, address_id ) 
-                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', $edad, null, $id_cuenta, $id_address)";
+                            VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', '$edad', '$original_imagen', $id_cuenta, $id_address)";
         $conexion->query($insertar_usuario);
 
 
         // Obtener el id_usuario recién generado
         $id_usuario = $conexion->insert_id;
+
+        // echo $insertar_usuarios;
 
         // Insertar los datos en la tabla "clientes"
         $insertar_clientes = "INSERT INTO clientes(usuario_id)
@@ -83,7 +97,7 @@ $conexion->begin_transaction();
         $id_usuario = $conexion->insert_id;
 
         //insertar los datos en la tabla "contactos"
-        $insertar_contactos = "INSERT INTO contactos (telefono, usuario_id) 
+        $insertar_contactos = "INSERT INTO contacto (telefono, usuario_id) 
                             VALUES ('$telefono', $id_usuario)";
         $conexion->query($insertar_contactos);
 
