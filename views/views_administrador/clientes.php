@@ -85,7 +85,7 @@ try {
 </div>
 
 <div class="container mt-5" >
-        <h1 class="text-center mb-4">Clientes registrados</h1>
+    <h1 class="text-center mb-4">Clientes registrados</h1>      
         <div class="table-responsive">
             <table class="table table-bordered table-active table-striped">
                 <thead class="thead-dark text-center">
@@ -125,8 +125,7 @@ try {
         </div>
     </div>
 
-
-
+    
 </body>
 
 </html>
