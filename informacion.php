@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
     $idUsuario = $_SESSION['id_usuario'];
     $informacion = $conexion->prepare('SELECT * FROM usuarios
      INNER JOIN cuentas ON usuarios.cuenta_id = cuentas.id_cuenta
-     INNER JOIN contactos ON contactos.usuario_id = usuarios.id_usuario
+     INNER JOIN contacto ON contacto.usuario_id = usuarios.id_usuario
       WHERE cuenta_id = :idUsuario');
     $informacion->execute(array(':idUsuario' => $idUsuario));
 
