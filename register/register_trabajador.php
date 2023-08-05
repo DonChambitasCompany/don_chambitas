@@ -106,7 +106,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
 
                         <div id="cfdiData" class="mt-4">
                             <div class="card">
-                                <div class="card-header bg-primary text-white">
+                                <div class="card-header bg-dark text-white">
                                     <h4>Datos de contacto</h4>
                                 </div>
                                 <div class="card-body">
@@ -145,7 +145,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                 <!-- Tercera parte del formulario -->
 
                 <div class="card">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-dark text-white">
                         <h3><i class="fas fa-file-alt"></i> Dirección</h3>
                     </div>
 
@@ -307,7 +307,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                         </div>
                         <div class="form-group">
                             <label for="year_graduation">Año de Graduación <strong style="color: red;">*</strong></label>
-                            <input type="text" class="form-control" id="year_graduation" name="year_graduation" placeholder="DD/MM/AAAA">
+                            <input type="text" class="form-control" id="year_graduation" name="year_graduation" placeholder="AAAA/MM/DD">
                         </div>
                         <div class="form-group">
                             <label for="proyectos_destacados">Proyectos Destacados <strong style="color: red;">*</strong></label>
