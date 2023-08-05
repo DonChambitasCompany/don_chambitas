@@ -50,7 +50,7 @@
             <br>
             <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Servicios</a></li>
             <br>
-            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
+            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Usuarios</a></li>
         </ul>
     </div>
 </div>

@@ -1,5 +1,16 @@
 <?php
     include '../register/process_register_php/conexion.php';
+
+    // Nombre de la tabla que deseas contar
+    $table_name = 'usuarios';
+
+    // Consulta para contar el número de filas en la tabla
+    $query = "SELECT COUNT(*) AS total_rows FROM $table_name";
+    $result = $conexion->query($query);
+    $row = $result->fetch_assoc();
+
+    // Obtener el número total de filas
+    $total_rows = $row['total_rows'];
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +69,7 @@
                     <br>
                     <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/servicios.php" class="text-decoration-none text-black">Servicios</a></li>
                     <br>
-                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/aceptar_denegar.php" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
+                    <li class="list-group mb-3 fw-bold fs-3"><a href="views_administrador/aceptar_denegar.php" class="text-decoration-none text-black">Usuarios</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +97,8 @@
                         </div>
                         <div class="col-6">
                             <h5 class="fw-semibold text-light">Clientes registrados</h5>
-                            <p class="text-light fw-bold" style="font-size: 20px">1,153,420</p>
+                            <p class="text-light fw-bold" style="font-size: 20px"><?php  echo $total_rows;
+ ?></p>
                         </div>
                     </div>
                     <div class="card-footer text-center bg-light p-0">
@@ -257,7 +269,7 @@
             data: {
                 labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
                 datasets: [{
-                    label: 'Ventas',
+                    label: 'Servicios',
                     data: [12, 19, 8, 15, 10, 20],
                     borderColor: 'rgba(54, 162, 235, 1)',
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -287,7 +299,7 @@
             data: {
                 labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul'],
                 datasets: [{
-                    label: 'Ventas',
+                    label: 'Servicios',
                     data: [12, 19, 8, 15, 10, 20, 30],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.8)',

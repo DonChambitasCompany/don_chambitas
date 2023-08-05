@@ -1,3 +1,21 @@
+<?php
+include '../../register/process_register_php/conexion.php';
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Consulta para obtener los datos de la tabla
+    $sql = "SELECT * FROM usuarios";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +70,7 @@
             <br>
             <li class="list-group mb-3 fw-bold fs-3"><a href="#" class="text-decoration-none text-black">Servicios</a></li>
             <br>
-            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
+            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Usuarios</a></li>
         </ul>
     </div>
 </div>
@@ -68,65 +86,45 @@
 </div>
 </div>
 
-    <div class="container text-center">
-        <br>
-        <br>
-
-        <h1><strong style="color: green;">ACEPTAR</strong> / <strong style="color: red;">DENEGAR</strong> TRABAJADORES</h1>
-        <br>
-        <br>
-        <div class="table-responsive" style="overflow-x: hidden;">
-            <table class="table table-primary table-striped table-hover">
-                <thead>
+<div class="container mt-5" >
+        <h1 class="text-center mb-4">Usuarios registrados</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-active table-striped">
+                <thead class="thead-dark text-center">
                     <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido Paterno</th>
-                        <th scope="col">Apellido Materno</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Correo Electrónico</th>
-                        <th scope="col">Tipo de solicitud</th>
-                        <th scope="col">Acciones</th>
-
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Edad</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">Pedro</td>
-                        <td>Páramo</td>
-                        <td>Reyes</td>
-                        <td>222 156 48 90</td>
-                        <td>pedro@gmail.com</td>
-                        <td><strong>Fontanero</strong></td>
-
-                        <td>
-                            <div class="row">
-                                <div class="col-12">
-                                    <button class="btn btn-danger">Eliminar</button>
-                                    <button class="btn btn-success">Aceptar</button>
+                    <?php foreach ($resultados as $row) { ?>
+                        <tr>
+                            <td><?php echo $row['nombre_usuario']; ?></td>
+                            <td><?php echo $row['apellido_paterno']; ?></td>
+                            <td><?php echo $row['apellido_materno']; ?></td>
+                            <td><?php echo $row['edad']; ?></td>
+                            <td><?php echo $row['rol']; ?></td>
+                            <td>
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button class="btn btn-success">Editar</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-danger">Eliminar</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Ernesto</td>
-                        <td>Gómez</td>
-                        <td>Bolaños</td>
-                        <td>222 156 48 90</td>
-                        <td>pedro@gmail.com</td>
-                        <td><strong>Carpintero</strong></td>
-                        <td>
-                            <div class="row">
-                                <div class="col-12">
-                                    <button class="btn btn-danger">Eliminar</button>
-                                    <button class="btn btn-success">Aceptar</button>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
-        
     </div>
 
 

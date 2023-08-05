@@ -68,7 +68,7 @@ try {
             <br>
             <li class="list-group mb-3 fw-bold fs-3"><a href="servicios.php" class="text-decoration-none text-black">Servicios</a></li>
             <br>
-            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Aceptar / Denegar Trabajadores</a></li>
+            <li class="list-group mb-3 fw-bold fs-3"><a href="aceptar_denegar.php" class="text-decoration-none text-black">Usuarios</a></li>
         </ul>
     </div>
 </div>
@@ -94,7 +94,7 @@ try {
                         <th>Apellido Paterno</th>
                         <th>Apellido Materno</th>
                         <th>Edad</th>
-                        <th>Fotografía</th>
+                        <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -105,7 +105,7 @@ try {
                             <td><?php echo $row['apellido_paterno']; ?></td>
                             <td><?php echo $row['apellido_materno']; ?></td>
                             <td><?php echo $row['edad']; ?></td>
-                            <td><?php echo $row['cuenta_id']; ?></td>
+                            <td><?php echo $row['rol']; ?></td>
                             <td>
                                 <div class="container text-center">
                                     <div class="row">
