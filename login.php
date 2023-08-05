@@ -8,7 +8,6 @@ $errores = '';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $correo = filter_var(strtolower($_POST['correo']),FILTER_SANITIZE_STRING);
     $password = $_POST['password']; 
-    $password = hash('sha512', $password);
 
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas','root',''); //conexión
@@ -27,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: profiles/usuario.php');
         exit;
     }
-    else if($correo == 'admin' and $password =='db0b9674b9c50a7810c7ce0e58d707865acd7270c8f65400d07eee937b18a45fae5178a36368e4ef9cec82f5fd5faf4e6cf99683be9ff5b2851e204a875d2310'){
+    else if($correo == 'admin' and $password =='don_chambitas'){
         header('Location: views/administrador.php');
         exit;
     }
