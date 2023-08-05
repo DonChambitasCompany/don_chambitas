@@ -25,4 +25,7 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
 
     }
 }
+echo $nombre;
+echo $ap;
+echo $numero;
 ?>
