@@ -190,6 +190,7 @@ $conexion->begin_transaction();
         // Si todo se insertó correctamente, confirmamos la transacción
         $conexion->commit();
         echo "Datos insertados correctamente.";
+        header('Location: ../../index.php');
     } catch (Exception $e) {
         // Si hay algún error en las inserciones, revertimos la transacción
         $conexion->rollback();
