@@ -21,7 +21,7 @@ $my_password = $_POST["my_password"];
 $my_password = ("$my_password");
 $correo_electronico = $_POST["correo_electronico"];
 
-//tabla contactos
+//tabla contacto
 $telefono = $_POST["telefono"];
 
 //tabla countries
@@ -89,18 +89,20 @@ $conexion->begin_transaction();
 
         // echo $insertar_usuarios;
 
+        //insertar los datos en la tabla "contactos"
+        $insertar_contactos = "INSERT INTO contacto (telefono, usuario_id) 
+                            VALUES ('$telefono', $id_usuario)";
+        $conexion->query($insertar_contactos);
+
+        $id_contacto = $conexion->insert_id;
+
         // Insertar los datos en la tabla "clientes"
         $insertar_clientes = "INSERT INTO clientes(usuario_id)
         VALUES ($id_usuario)";
         $conexion->query($insertar_clientes);
 
         // Obtener el id_usuario recién generado
-        $id_usuario = $conexion->insert_id;
-
-        //insertar los datos en la tabla "contactos"
-        $insertar_contactos = "INSERT INTO contacto (telefono, usuario_id) 
-                            VALUES ('$telefono', $id_usuario)";
-        $conexion->query($insertar_contactos);
+        $id_cliente = $conexion->insert_id;
 
         // Insertar los datos en la tabla "estado_o_provincia"
         $insertar_estado_o_provincia = "INSERT INTO estado_o_provincia (name_estado_o_provincia, country_id) 
