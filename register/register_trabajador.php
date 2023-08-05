@@ -49,10 +49,8 @@ $result_profesiones = $conexion->query($sql_profesiones);
                             <div class="col-md-8">
                                 <p>Es necesario llenar todos los campos con la información correcta</p>
                                 <div class="form-group">
-                                    <label for="">Fecha de registro:</label>
-                                    <strong>
-                                    <label id="fechaLabel"></label>
-                                    </strong>
+                                    <label for="fecha">Fecha <strong style="color: red;">*</strong></label>
+                                    <input type="text" class="form-control" id="fecha" name="fecha" placeholder="fecha" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="name_profesion">Puesto Solicitado <strong style="color: red;">*</strong></label>
@@ -259,7 +257,7 @@ $result_profesiones = $conexion->query($sql_profesiones);
                                 <div class="form-group row">
                                     <label for="numero_licencia" class="col-sm-4 col-form-label">Número <strong style="color: red;">*</strong></label>
                                     <div class="col-sm-8">
-                                        <input autocomplete="off" class="form-control" id="numero_licencia" maxlength="50" name="numero_licencia" type="text" value="" />
+                                        <input autocomplete="off" class="form-control" id="numero_licencia" maxlength="50" name="numero_licencia" type="text"/>
                                     </div>
                                 </div>
                             </div>

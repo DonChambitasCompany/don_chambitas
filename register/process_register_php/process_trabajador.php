@@ -62,8 +62,6 @@ $original_doc_antecedentes_penales = $_FILES["doc_antecedentes_penales"]["name"]
 //tabla licencias
 $numero_licencia = $_POST["numero_licencia"];
 
-
-
 //tabla datos_educacion
 $nombre_universidad = $_POST["nombre_universidad"];
 /*--------------------------------------------------------------------------------*/
@@ -115,7 +113,7 @@ $conexion->begin_transaction();
         // Obtener el id_datos_educacion
         $id_datos_educacion = $conexion->insert_id;
 
-        // echo $insertar_datos_educacion
+        // echo $insertar_datos_educacion;
     
 
         /*Tablas 1toN*/
@@ -133,7 +131,7 @@ $conexion->begin_transaction();
 
         //Insertar los datos en la tabla usuarios
         $insertar_usuarios = "INSERT INTO usuarios (nombre_usuario, apellido_paterno, apellido_materno, edad, imagen, rol, cuenta_id, address_id) 
-        VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', '$edad', '$original_imagen', '$rol', $id_cuenta, $id_address)";
+        VALUES ('$nombre_usuario', '$apellido_paterno', '$apellido_materno', NULL, '$original_imagen', '$rol', $id_cuenta, $id_address)";
         $conexion->query($insertar_usuarios);
 
         // Obtener el id_usuario recién generado
@@ -142,17 +140,18 @@ $conexion->begin_transaction();
         // echo $insertar_usuarios;
 
 
-        // Insertar los datos en la tabla documentacion_trabajador
-        $insertar_documentacion_trabajador = "INSERT INTO documentacion_trabajador (numero_curp, rfc, tiene_licencia, 
-                                                numero_licencia,tiene_antecedentes_penales, doc_antecedentes_penales, tipo_licencia_id, datos_educacion_id)
+         // Insertar los datos en la tabla documentacion_trabajador
+         $insertar_documentacion_trabajador = "INSERT INTO documentacion_trabajador (numero_curp, rfc, tiene_licencia, 
+                                                numero_licencia, tiene_antecedentes_penales, doc_antecedentes_penales, tipo_licencia_id, datos_educacion_id)
                                                 VALUES ('$numero_curp', '$rfc', '$tiene_licencia', 
-                                                '$numero_licencia','$tiene_antecedentes_penales', '$original_doc_antecedentes_penales', $nombre_tipo_licencia, $id_datos_educacion)";
+                                                '$numero_licencia', '$tiene_antecedentes_penales', '$original_doc_antecedentes_penales', $nombre_tipo_licencia, $id_datos_educacion)";
         $conexion->query($insertar_documentacion_trabajador);
 
         // Obtener el id_documentacion_trabajador recién generado
         $id_documentacion_trabajador = $conexion->insert_id;
 
         // echo $insertar_documentacion_trabajador;
+
 
         //Insertar los datos en la tabla trabajadores
         $insertar_trabajador = "INSERT INTO trabajadores (usuario_id, profesion_id, documentacion_trabajador_id)
