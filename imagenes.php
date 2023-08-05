@@ -11,8 +11,8 @@ if ($fila = $consulta_imagen->fetch()) {
     $imagenUsuario = $fila['imagen'];
 
     // Mostrar la imagen del usuario en un contenedor redondeado
-    echo '<div  50%; overflow: hidden; width: 100px; height: 100px;">';
-    echo '<img class="rounded-circle"; src="data:image/jpeg;base64,' . base64_encode($imagenUsuario) . '" alt="Imagen de usuario" style="width: 50%; height: 50%; object-fit: cover;">';
+    echo '<div  style ="50%; overflow: hidden; width: 100px; height: 100px;">';
+    echo '<img class="rounded-circle"; src="data:image/jpeg;base64,' . base64_encode($imagenUsuario) . '" alt="Imagen de usuario" style="width: 100%; height: 100%; object-fit: cover;">';
     echo '</div>';
 } else {
     echo "No se encontró una imagen para el usuario con ID: $idUsuario.";

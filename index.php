@@ -116,7 +116,7 @@ session_start();
 
                 // Muestra la imagen si está presente
                 if ($row["imagen"]) {
-                    echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="border-radius: 50%;"> ';
+                    echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="width: 60%; height: 60%; object-fit: cover; border-radius:50%"> ';
                 } else {
                     echo '            <p>No hay imagen disponible.</p>';
                 }

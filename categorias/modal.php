@@ -23,13 +23,16 @@
                 <div class="container">
                     <div class="image">
                        <?php include 'modal_cont.php';
-                       if ($fila = $consulta_imagen->fetch()) {
+                       if ($fila = $resultado_imagen) {
+                        $imagenUsuario = $fila['imagen'];
+                      
                         // Mostrar la imagen del usuario en un contenedor redondeado
-                        echo '<div  50%; overflow: hidden; width: 100px; height: 100px;">';
-                        echo '<img class="rounded-circle"; src="data:image/jpeg;base64,' . base64_encode($imagenUsuario) . '" alt="Imagen de usuario" style="width: 50%; height: 50%; object-fit: cover;">';
+                        echo '<div  style ="50%; overflow: hidden; width: 100px; height: 100px;">';
+                        echo '<img class="rounded-circle"; src="data:image/jpeg;base64,' . base64_encode($imagenUsuario) . '" alt="Imagen de usuario" style="width: 100%; height: 100%; object-fit: cover;">';
                         echo '</div>';
-                      } 
-                       ?> 
+                      } else {
+                        echo "No se encontró una imagen para el usuario con ID: $idUsuario.";
+                      } ?>
                   </div>
                     <div class="info">
                       <div class="info-item">
@@ -47,7 +50,7 @@
                       </em></span>
                       </div>
                       <div class="info-item">
-                        <span class="price">$99.99</span>
+                        <span class="price">$299.99</span>
                       </div>
                     </div>
                   </div>

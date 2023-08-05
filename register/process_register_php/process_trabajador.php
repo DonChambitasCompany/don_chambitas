@@ -23,7 +23,7 @@ $original_imagen = addslashes(file_get_contents($imagen_tmp));
 
 //tabla cuentas
 $my_password = $_POST["my_password"];
-$my_password = ("$my_password");
+$my_password = hash('sha512',$my_password);
 $correo_electronico = $_POST["correo_electronico"];
 
 //pendiente

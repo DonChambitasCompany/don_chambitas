@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
     try {
         $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas', 'root', '');
@@ -14,15 +14,19 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['id_usuario'])) {
      INNER JOIN contactos ON contactos.usuario_id = usuarios.id_usuario
       WHERE cuenta_id = :idUsuario');
     $informacion->execute(array(':idUsuario' => $idUsuario));
+    $informacion ->fetch();
 
     foreach($informacion as $fila){
-        $nombre = $fila['nombre_usuario']. '<br>';
-        $ap = $fila['apellido_paterno']. '<br>';
-        $am = $fila['apellido_materno']. '<br>';
-        $edad = $fila['edad'].'<br>';
-        $email = $fila['correo_electronico']. '<br>';
-        $numero = $fila['telefono']. '<br>';
+        $nombre = $fila['nombre_usuario'];
+        $ap = $fila['apellido_paterno'];
+        $am = $fila['apellido_materno'];
+        $edad = $fila['edad'];
+        $email = $fila['correo_electronico'];
+        $numero = $fila['telefono'];
 
+        
     }
+    echo 'chi cheñol';
 }
+
 ?>
