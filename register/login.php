@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['usuario'])){//comprobar si ya está la sesión
+    header('Location: ../profiles/usuario.php');//si es así va pal index
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
