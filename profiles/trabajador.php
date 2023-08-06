@@ -22,7 +22,7 @@ if (!isset($_SESSION['usuario'])) { //comprobar si ya está la sesión
     <!--Header del perfil de usuario-->
     <header>
         <div class="home">
-            <a href="../index.php"><ion-icon name="home-outline"></ion-icon></a>
+            <a href="../cerrar.php"><ion-icon name="close-outline" title="cerrar sesión"></ion-icon></a>
         </div>
         <div class="name" align="center">
             <h1>Tu perfil</h1>
