@@ -8,7 +8,8 @@ $errores = '';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $correo = filter_var(strtolower($_POST['correo']),FILTER_SANITIZE_STRING);
     $password = $_POST['password']; 
-
+    $password = hash('sha512', $password);
+    $rol = "cliente";
     try{
         $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas','root',''); //conexión
     }  
@@ -16,8 +17,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "Error:" .$e->getMessage();
     }
 
-    $statement = $conexion->prepare('SELECT * FROM cuentas where correo_electronico = :correo AND my_password = :pass'); //verificar si existe la cuenta con contraseña ingresada
-    $statement ->execute(array(':correo' => $correo,':pass' => $password ));
+    $statement = $conexion->prepare('SELECT * FROM cuentas INNER JOIN usuarios ON cuentas.id_cuenta = usuarios.cuenta_id WHERE correo_electronico = :correo AND my_password = :pass AND rol = :rol'); //verificar si existe la cuenta con contraseña ingresada
+    $statement ->execute(array(':correo' => $correo,':pass' => $password , ':rol' => $rol));
 
     $resultado = $statement->fetch();
     if ($resultado != false){
