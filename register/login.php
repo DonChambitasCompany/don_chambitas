@@ -13,6 +13,7 @@ if (isset($_SESSION['usuario'])){//comprobar si ya está la sesión
     <link rel="stylesheet" href="register.css" type="text/css">
     <link rel="stylesheet" href="login.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="icon" href="assets/logo_principal.png" type="image/png">
 
 </head>
 <body>
