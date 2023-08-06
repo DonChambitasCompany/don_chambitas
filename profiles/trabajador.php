@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['usuario'])) { //comprobar si ya está la sesión
-    header('Location: ../register/login_trabajador.php');
+    header('Location: ../register/login.php');
     exit();
 }
 ?>
