@@ -10,6 +10,7 @@ include '../register/process_register_php/conexion.php';
     <title>Albañiles | Don Chambitas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="assets/logo_principal.png" type="image/png">
 </head>
     <?php include 'header.php'; ?>
 <body>
