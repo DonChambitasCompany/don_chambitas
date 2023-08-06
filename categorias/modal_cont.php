@@ -1,7 +1,7 @@
 <?php 
 try{
-  $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas','root','');
-  }
+  $conexion = new PDO('mysql:host=65.99.225.55;dbname=agenc158_don_chambitas','agenc158_ivan','chambitas2023'); //conexión
+}
   catch(PDOException $e){
     echo "Error" .$e;
   }
