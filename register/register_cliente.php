@@ -15,6 +15,7 @@ if (isset($_SESSION['usuario'])){//comprobar si ya está la sesión
     <title>Registro</title>
     <link href="register.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="icon" href="assets/logo_principal.png" type="image/png">
 
 </head>
 
