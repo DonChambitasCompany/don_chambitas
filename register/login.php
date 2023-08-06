@@ -46,7 +46,7 @@ if (isset($_SESSION['usuario'])){//comprobar si ya está la sesión
                             <a href="../index.php"><button type="button" class="buton buton-black">Volver</button></a>
                             <br><br>
                             <a href="register_cliente.html"><button type="button" class="buton buton-registro">¿Aún no tienes una cuenta?
-                                <br><strong>Registrate</strong></button></a>
+                                <br><strong>Registrate como Cliente</strong></button></a>
                             
                             <?php if (!empty($errores)):?>
                             <div class="error">
