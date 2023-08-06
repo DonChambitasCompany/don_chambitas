@@ -2,9 +2,9 @@
 if (isset($_SESSION['usuario'])){//comprobar si ya está la sesión
     header('Location: profiles/usuario.php');//si es así va pal index
 }
-else {
-    header ('Location: register/login.php');
-}
+// else {
+//     header ('Location: login.php');
+// }
 $errores = '';
 
 // se crean variables
