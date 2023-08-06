@@ -108,6 +108,7 @@ session_start();
 
                 // Muestra la tarjeta con la información del usuario
                 echo '<div class="col-md-3 text-center">';
+                echo '<br><br>';
                 echo '    <div class="card">';
                 echo '        <h2>' . $nombre_usuario . '</h2>';
                 echo '        <h2>' . $profesion_nombre . '</h2>';
