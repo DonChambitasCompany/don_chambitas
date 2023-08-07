@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $password = $_POST['password']; 
     $password = hash('sha512', $password);
     try{
-        $conexion = new PDO('mysql:host=localhost;dbname=don_chambitas','root','');    }  
+        $conexion = new PDO('mysql:host=65.99.225.55;dbname=agenc158_don_chambitas','agenc158_ivan','chambitas2023'); //conexión
     catch (PDOException $e){
         echo "Error:" .$e->getMessage();
     }
@@ -41,5 +41,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: register/login.php');
         $errores .= '<li>Datos incorrectos</li>';
     }
+}
 }
 ?>
