@@ -13,9 +13,8 @@ if (!isset($_SESSION['usuario'])){//comprobar si ya está la sesión
     <link rel="stylesheet" href="../banco/styles.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-
 </head>   
-<?php require '../informacion.php'; ?>
+<?php require '../informacion_trabajador.php'; ?>
 <body align="center">
     <div class="profile__cont">
         <h1 align="center">Tus datos</h1><br><br>
@@ -31,16 +30,17 @@ if (!isset($_SESSION['usuario'])){//comprobar si ya está la sesión
                         <th>Telefono Celular</th>
                     </thead>
                     <tbody>
-                        <td><?php  echo $nombre?></td>
-                        <td><?php  echo $ap?></td>
-                        <td><?php  echo $am?></td>
-                        <td><?php  echo $edad?></td>
-                        <td><?php  echo $email?></td>
-                        <td><?php  echo $numero?></td>
+                        <td><?php echo $nombre?></td>
+                        <td><?php echo $ap?></td>
+                        <td><?php echo $am?></td>
+                        <td><?php echo $edad?></td>
+                        <td><?php echo $email?></td>
+                        <td><?php echo $numero?></td>
                     </tbody>
                 </table>
         
             <br><br><br>
-            <button type="submit" class="btn" style="background-color: orange;"><a style="text-decoration: none; color: #ffff;" href="usuario.php">Volver</a></button>
+            <button class ="btn " type="submit" style="background-color: orange;"><a style="text-decoration: none; color: #ffff;" href="trabajador.php">Volver<br></a></button>
     </div>
+</body>
 </html>
