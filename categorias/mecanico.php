@@ -27,7 +27,7 @@ include '../register/process_register_php/conexion.php';
         INNER JOIN profesiones AS p ON p.id_profesion = t.profesion_id
         INNER JOIN addresses AS a ON a.id_address = u.address_id
         INNER JOIN countries AS c ON c.id_country = a.country_id
-        WHERE u.rol = 2 and name_profesion = 'Mecánico'";
+        WHERE u.rol = 2 and name_profesion = 'Mecanico'";
 
         $result = $conexion->query($sql);
 
@@ -56,7 +56,7 @@ include '../register/process_register_php/conexion.php';
                 // Muestra la imagen si está presente
                 if ($row["imagen"]) {
                     echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="width: 60%; height: 60%; object-fit: cover; border-radius:50%"> ';
-                    echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="style="width: 60%; height: 60%; object-fit: cover; border-radius:50%"> ';
+                    // echo '            <img src="data:image/jpg;base64,' . base64_encode($row["imagen"]) . '" alt="Imagen" style="style="width: 60%; height: 60%; object-fit: cover; border-radius:50%"> ';
                 } else {
                     echo '            <p>No hay imagen disponible.</p>';
                 }

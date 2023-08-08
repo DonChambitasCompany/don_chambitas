@@ -27,7 +27,7 @@ include '../register/process_register_php/conexion.php';
         INNER JOIN profesiones AS p ON p.id_profesion = t.profesion_id
         INNER JOIN addresses AS a ON a.id_address = u.address_id
         INNER JOIN countries AS c ON c.id_country = a.country_id
-        WHERE u.rol = 2 and name_profesion = 'Albañil'";
+        WHERE u.rol = 2 and name_profesion = 'Albanil'";
 
         $result = $conexion->query($sql);
 
