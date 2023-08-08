@@ -15,7 +15,7 @@
                 <ul class="nav-links">
                     <li><a href="#trabajo">Top trabajadores</a></li>
                     <li><a href="../index.php">Categorías</a></li>
-                   <li><a href="../register/inf_trabajador.html">¡Quiero trabajar!</a></li>
+                   
                 
                    <?php
                     if (isset($_SESSION['usuario'])){
