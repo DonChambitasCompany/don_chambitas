@@ -12,12 +12,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $correo = filter_var(strtolower($_POST['correo']),FILTER_SANITIZE_STRING);
     $password = $_POST['password']; 
     $password = hash('sha512', $password);
-    try{
-        $conexion = new PDO('mysql:host=65.99.225.55;dbname=agenc158_don_chambitas','agenc158_ivan','chambitas2023');
-    } //conexión
-    catch (PDOException $e){
-        echo "Error:" .$e->getMessage();
-    }
+    require 'pdo.php';
+
 
     $statement = $conexion->prepare('SELECT * FROM cuentas INNER JOIN usuarios ON cuentas.id_cuenta = usuarios.cuenta_id WHERE correo_electronico = :correo AND my_password = :pass '); //verificar si existe la cuenta con contraseña ingresada
     $statement ->execute(array(':correo' => $correo,':pass' => $password ));
