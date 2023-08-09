@@ -20,18 +20,18 @@
                    <?php
                     if (isset($_SESSION['usuario'])){
                         $trabajar = '';
-                        $perfil = '<a href="profiles/usuario.php">Mi perfil</a>';
+                        $perfil = '<a href="../profiles/usuario.php">Mi perfil</a>';
                         $usuario = '<a href="cerrar.php">Cerrar Sesión</a>';
                         
                     }
                     else{
                         $trabajador = 'Sesión Trabajador';
-                        $trabajar = '<a href="register/register_trabajador.php">¡Quiero trabajar!</a>';
+                        $trabajar = '<a href="../register/register_trabajador.php">¡Quiero trabajar!</a>';
                         $perfil = '';
-                        $usuario = '<a href="register/login.php">Iniciar Sesión</a>';
+                        $usuario = '<a href="../register/login.php">Iniciar Sesión</a>';
                     }?>
-                <li><a href="register/register_trabajador.php"><?php echo $trabajar; ?>
-                <li><a href="profiles/usuario.php"><?php echo $perfil; ?> </li>
+                <li><a href="../register/register_trabajador.php"><?php echo $trabajar; ?>
+                <li><a href="../profiles/usuario.php"><?php echo $perfil; ?> </li>
                 </ul>
                 <li>
                 <button class="btn" id="boton"><?php echo $usuario; ?></button>
