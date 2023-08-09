@@ -21,7 +21,7 @@
                     if (isset($_SESSION['usuario'])){
                         $trabajar = '';
                         $perfil = '<a href="../profiles/usuario.php">Mi perfil</a>';
-                        $usuario = '<a href="cerrar.php">Cerrar Sesión</a>';
+                        $usuario = '<a href="../cerrar.php">Cerrar Sesión</a>';
                         
                     }
                     else{
